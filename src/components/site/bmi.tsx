@@ -53,7 +53,7 @@ export function BmiCalculator() {
                   inputMode="decimal"
                   value={height}
                   onChange={(e) => setHeight(e.target.value)}
-                  placeholder="175"
+                  placeholder="eg: 175"
                   className="mt-2 w-full rounded-2xl border border-glass-border bg-secondary/60 px-5 py-3.5 outline-none transition focus:border-primary"
                 />
               </div>
@@ -67,7 +67,7 @@ export function BmiCalculator() {
                   inputMode="decimal"
                   value={weight}
                   onChange={(e) => setWeight(e.target.value)}
-                  placeholder="72"
+                  placeholder="eg: 72"
                   className="mt-2 w-full rounded-2xl border border-glass-border bg-secondary/60 px-5 py-3.5 outline-none transition focus:border-primary"
                 />
               </div>

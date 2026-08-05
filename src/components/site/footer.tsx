@@ -24,14 +24,21 @@ export function Footer() {
             seriously.
           </p>
           <div className="mt-5 flex gap-3">
-            {[Instagram, Facebook, Twitter, Youtube].map((Icon, i) => (
+            {[
+              { icon: Instagram, href: "https://www.instagram.com/pro_athletic_gyms/", label: "Instagram" },
+              { icon: Facebook, href: "https://www.facebook.com/proathleticgymsviproadzirakpur/", label: "Facebook" },
+              { icon: Twitter, href: "https://twitter.com/", label: "Twitter" },
+              { icon: Youtube, href: "https://youtube.com/", label: "YouTube" },
+            ].map((s) => (
               <a
-                key={i}
-                href="#home"
-                aria-label="Pro Athletic social profile"
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Pro Athletic ${s.label}`}
                 className="rounded-full glass p-2.5 transition hover:border-primary hover:text-primary"
               >
-                <Icon size={16} />
+                <s.icon size={16} />
               </a>
             ))}
           </div>

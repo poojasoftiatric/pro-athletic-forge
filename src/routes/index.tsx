@@ -10,7 +10,6 @@ import { Transformations } from "@/components/site/transformations";
 import { Testimonials } from "@/components/site/testimonials";
 import { Gallery } from "@/components/site/gallery";
 import { Facilities } from "@/components/site/facilities";
-import { AppPromo } from "@/components/site/app-promo";
 import { Contact } from "@/components/site/contact";
 import { Footer } from "@/components/site/footer";
 
@@ -70,7 +69,6 @@ function Index() {
         <Testimonials />
         <Gallery />
         <Facilities />
-        <AppPromo />
         <Contact />
       </main>
       <Footer />

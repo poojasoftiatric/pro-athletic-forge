@@ -25,14 +25,14 @@ export function Transformations() {
         <div className="mt-14 grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <Reveal direction="left">
             <div className="relative overflow-hidden rounded-[2rem] glass">
-              <div className="relative aspect-[4/5] sm:aspect-[16/11]">
+              <div className="relative aspect-[4/5] sm:aspect-[4/3]">
                 <img
                   src={after1}
                   alt="Member after their Pro Athletic transformation"
                   loading="lazy"
                   width={800}
                   height={1000}
-                  className="absolute inset-0 h-full w-full object-cover object-top"
+                  className="absolute inset-0 h-full w-full object-cover object-center"
                 />
                 <div
                   className="absolute inset-0 overflow-hidden"
@@ -44,7 +44,7 @@ export function Transformations() {
                     loading="lazy"
                     width={800}
                     height={1000}
-                    className="h-full w-full object-cover object-top"
+                    className="h-full w-full object-cover object-center"
                     style={{ width: `${(100 / pos) * 100}%`, maxWidth: "none" }}
                   />
                 </div>

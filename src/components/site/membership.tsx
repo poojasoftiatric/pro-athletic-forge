@@ -5,14 +5,16 @@ import { SectionHeading } from "./why-us";
 const plans = [
   {
     name: "Starter",
-    price: "999",
+    price: "5000",
+    duration: "3 Months",
     cta: "Join Starter",
     features: ["Gym Access", "Cardio Zone", "Locker"],
     highlight: false,
   },
   {
     name: "Premium",
-    price: "1999",
+    price: "7500",
+    duration: "6 Months",
     cta: "Become Premium",
     features: [
       "Everything in Starter",
@@ -24,7 +26,8 @@ const plans = [
   },
   {
     name: "Elite",
-    price: "3999",
+    price: "10000",
+    duration: "12 Months",
     cta: "Go Elite",
     features: [
       "Unlimited Access",
@@ -46,11 +49,11 @@ export function Membership() {
           title="CHOOSE YOUR LEVEL"
           subtitle="No hidden fees. Cancel anytime. Every plan includes a free onboarding session."
         />
-        <div className="mt-14 grid items-start gap-6 lg:grid-cols-3">
+        <div className="mt-14 grid items-stretch gap-6 lg:grid-cols-3">
           {plans.map((plan, i) => (
-            <Reveal key={plan.name} direction="up" delay={i * 120}>
+            <Reveal key={plan.name} direction="up" delay={i * 120} className="h-full">
               <article
-                className={`relative h-full rounded-3xl p-8 lift ${
+                className={`relative flex h-full flex-col rounded-3xl p-8 lift ${
                   plan.highlight
                     ? "border border-primary/50 bg-card glow-red"
                     : "glass"
@@ -69,9 +72,9 @@ export function Membership() {
                 </h3>
                 <p className="mt-4 flex items-baseline gap-1">
                   <span className="display text-6xl">₹{plan.price}</span>
-                  <span className="text-sm text-muted-foreground">/month</span>
+                  <span className="text-sm text-muted-foreground">/ {plan.duration}</span>
                 </p>
-                <ul className="mt-7 space-y-3">
+                <ul className="mt-7 flex-1 space-y-3">
                   {plan.features.map((f) => (
                     <li key={f} className="flex items-center gap-3 text-sm">
                       <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/15 text-primary">
@@ -83,7 +86,7 @@ export function Membership() {
                 </ul>
                 <a
                   href="#contact"
-                  className={`mt-8 block rounded-full py-3.5 text-center text-sm font-bold tracking-wide uppercase transition-all duration-300 hover:-translate-y-0.5 ${
+                  className={`mt-8 block w-full rounded-full py-3.5 text-center text-sm font-bold tracking-wide uppercase transition-all duration-300 hover:-translate-y-0.5 ${
                     plan.highlight
                       ? "text-primary-foreground hover:glow-red"
                       : "border border-glass-border hover:border-primary"

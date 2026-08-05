@@ -6,22 +6,54 @@ import { SectionHeading } from "./why-us";
 const info = [
   { icon: Phone, label: "Phone", value: "+91 98200 44120" },
   { icon: Mail, label: "Email", value: "train@proathletic.fit" },
-  { icon: MapPin, label: "Address", value: "24 Turf Lane, Bandra West, Mumbai 400050" },
+  { icon: MapPin, label: "Address", value: "Hollywood Plaza, SCO 9-10, VIP Rd, Zirakpur, Punjab 140603" },
   { icon: Clock, label: "Working Hours", value: "Open 24/7 · Staffed 6am – 11pm" },
 ];
 
 export function Contact() {
-  const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [resultMessage, setResultMessage] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent(true);
+    setIsSubmitting(true);
+    setResultMessage("Sending message...");
+    setIsSuccess(false);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSuccess(true);
+        setResultMessage("Thanks! Our team will call you within 24 hours.");
+        form.reset();
+      } else {
+        setIsSuccess(false);
+        setResultMessage(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setIsSuccess(false);
+      setResultMessage("Something went wrong. Please check your internet connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const field =
     "mt-2 w-full rounded-2xl border border-glass-border bg-secondary/60 px-5 py-3.5 text-sm outline-none transition focus:border-primary";
   const labelCls =
     "text-xs font-semibold tracking-widest uppercase text-muted-foreground";
+
+  const accessKey = import.meta.env["VITE_WEB3FORMS_ACCESS_KEY"];
 
   return (
     <section id="contact" className="relative py-24 lg:py-32">
@@ -37,9 +69,9 @@ export function Contact() {
             <div className="h-full overflow-hidden rounded-[2rem] glass">
               <iframe
                 title="Pro Athletic location map"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=72.81%2C19.04%2C72.86%2C19.08&layer=mapnik"
+                src="https://maps.google.com/maps?q=Hollywood%20Plaza%2C%20SCO%209-10%2C%20VIP%20Rd%2C%20Zirakpur%2C%20Punjab%20140603&t=&z=16&ie=UTF8&iwloc=&output=embed"
                 loading="lazy"
-                className="h-72 w-full border-0 grayscale lg:h-80"
+                className="h-72 w-full border-0 lg:h-80"
               />
               <ul className="grid gap-4 p-7 sm:grid-cols-2">
                 {info.map((item) => (
@@ -59,6 +91,10 @@ export function Contact() {
 
           <Reveal direction="right">
             <form onSubmit={onSubmit} className="rounded-[2rem] glass p-8 lg:p-10">
+              <input type="hidden" name="access_key" value={accessKey} />
+              <input type="hidden" name="subject" value="New Free Trial Booking - Pro Athletic Gym" />
+              <input type="hidden" name="from_name" value="Pro Athletic Website" />
+
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
                   <label htmlFor="name" className={labelCls}>Name</label>
@@ -79,13 +115,19 @@ export function Contact() {
               </div>
               <button
                 type="submit"
-                className="mt-7 w-full rounded-full py-4 text-sm font-bold tracking-wide uppercase text-primary-foreground transition-all duration-300 hover:glow-red hover:-translate-y-0.5"
+                disabled={isSubmitting}
+                className="mt-7 w-full rounded-full py-4 text-sm font-bold tracking-wide uppercase text-primary-foreground transition-all duration-300 hover:glow-red hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
                 style={{ background: "var(--gradient-red)" }}
               >
-                Book Free Trial
+                {isSubmitting ? "Sending..." : "Book Free Trial"}
               </button>
-              <p aria-live="polite" className="mt-4 min-h-5 text-center text-sm text-primary">
-                {sent ? "Thanks — our team will call you within 24 hours." : ""}
+              <p
+                aria-live="polite"
+                className={`mt-4 min-h-5 text-center text-sm ${
+                  isSuccess ? "text-primary" : "text-red-400"
+                }`}
+              >
+                {resultMessage}
               </p>
             </form>
           </Reveal>

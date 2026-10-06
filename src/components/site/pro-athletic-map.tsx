@@ -24,14 +24,11 @@ export function ProAthleticMap() {
       });
       mapRef.current = map;
 
-      L.tileLayer(
-        "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
-        {
-          attribution: "&copy; OpenStreetMap &copy; CARTO",
-          subdomains: "abcd",
-          maxZoom: 20,
-        }
-      ).addTo(map);
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+        attribution: "&copy; OpenStreetMap &copy; CARTO",
+        subdomains: "abcd",
+        maxZoom: 20,
+      }).addTo(map);
 
       const pinSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 60" width="48" height="60">
         <defs>
@@ -72,7 +69,7 @@ export function ProAthleticMap() {
               Open in Google Maps &#8599;
             </a>
           </div>`,
-          { maxWidth: 230 }
+          { maxWidth: 230 },
         )
         .openPopup();
     });
@@ -92,11 +89,7 @@ export function ProAthleticMap() {
         href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         crossOrigin=""
       />
-      <div
-        ref={containerRef}
-        className="h-72 w-full lg:h-80"
-        style={{ background: "#111" }}
-      />
+      <div ref={containerRef} className="h-72 w-full lg:h-80" style={{ background: "#111" }} />
     </>
   );
 }

@@ -1,9 +1,9 @@
 import { n as require_jsx_runtime, t as QueryClientProvider } from "../_libs/react+tanstack__react-query.mjs";
-import { _ as Link, f as createRouter, g as createRootRouteWithContext, h as createFileRoute, l as Scripts, m as lazyRouteComponent, p as Outlet, u as HeadContent, v as useRouter } from "../_libs/@tanstack/react-router+[...].mjs";
+import { _ as createFileRoute, b as useRouter, d as Scripts, f as HeadContent, g as lazyRouteComponent, h as Outlet, m as createRouter, v as createRootRouteWithContext, y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-BOfR3zE9.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DJC5RjV1.js
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-CXPjga4H.css";
+var styles_default = "/assets/styles-DuoyDmV8.css";
 function NotFoundComponent() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		className: "flex min-h-screen items-center justify-center bg-background px-4",
@@ -146,7 +146,7 @@ function RootComponent() {
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {})
 	});
 }
-var $$splitComponentImporter = () => import("./routes-oupc1xJT.mjs");
+var $$splitComponentImporter = () => import("./routes-CGo60ztp.mjs");
 var title = "Pro Athletic — Premium Gym & Performance Center";
 var description = "Train with elite coaches, world-class equipment and 24/7 access at Pro Athletic. Memberships from ₹999/month. Book a free trial today.";
 var rootRouteChildren = { IndexRoute: createFileRoute("/")({

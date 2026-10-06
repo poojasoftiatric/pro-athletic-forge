@@ -44,7 +44,10 @@ export function BmiCalculator() {
           <Reveal direction="left">
             <div className="space-y-5">
               <div>
-                <label htmlFor="bmi-height" className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">
+                <label
+                  htmlFor="bmi-height"
+                  className="text-xs font-semibold tracking-widest uppercase text-muted-foreground"
+                >
                   Height (cm)
                 </label>
                 <input
@@ -58,7 +61,10 @@ export function BmiCalculator() {
                 />
               </div>
               <div>
-                <label htmlFor="bmi-weight" className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">
+                <label
+                  htmlFor="bmi-weight"
+                  className="text-xs font-semibold tracking-widest uppercase text-muted-foreground"
+                >
                   Weight (kg)
                 </label>
                 <input

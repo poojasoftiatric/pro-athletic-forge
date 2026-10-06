@@ -62,7 +62,10 @@ export function Testimonials() {
                     height={900}
                     className="mx-auto h-20 w-20 rounded-full object-cover object-top ring-2 ring-primary/60"
                   />
-                  <div className="mt-4 flex justify-center gap-1 text-primary" aria-label={`${r.rating} out of 5`}>
+                  <div
+                    className="mt-4 flex justify-center gap-1 text-primary"
+                    aria-label={`${r.rating} out of 5`}
+                  >
                     {Array.from({ length: r.rating }).map((_, i) => (
                       <Star key={i} size={15} fill="currentColor" />
                     ))}

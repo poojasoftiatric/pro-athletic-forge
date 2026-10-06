@@ -53,8 +53,7 @@ export function Hero() {
 
         <Reveal direction="up" delay={200}>
           <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
-            Train with elite coaches, world-class equipment, and a community built for
-            champions.
+            Train with elite coaches, world-class equipment, and a community built for champions.
           </p>
         </Reveal>
 
@@ -89,7 +88,10 @@ export function Hero() {
             {stats.map((s) => (
               <div key={s.label} className="min-w-28">
                 <p className="display text-4xl text-foreground">
-                  <Counter to={s.value} suffix={<span className="font-sans text-3xl">{s.suffix}</span>} />
+                  <Counter
+                    to={s.value}
+                    suffix={<span className="font-sans text-3xl">{s.suffix}</span>}
+                  />
                 </p>
                 <p className="mt-1 text-xs tracking-wide text-muted-foreground uppercase">
                   {s.label}

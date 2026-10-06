@@ -1,16 +1,16 @@
 import { Instagram, Twitter, Youtube } from "lucide-react";
 import t1 from "@/assets/Kishan Trainer.jpeg";
 import t2 from "@/assets/Yogesh.png";
-import t3 from "@/assets/trainer-3.jpg";
-import t4 from "@/assets/trainer-4.jpg";
+import t3 from "@/assets/Bhupesh.png";
+import t4 from "@/assets/Ankush.png";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./why-us";
 
 const trainers = [
-  { name: "Kishan", spec: "Fitness Trainer", exp: "12 years", img: t1 },
-  { name: "Yogesh", spec: "Gym Manager & Fitness Consultant", exp: "8 years", img: t2 },
-  { name: "Dev Kapoor", spec: "Bodybuilding", exp: "15 years", img: t3 },
-  { name: "Sara Iyer", spec: "Yoga & Mobility", exp: "9 years", img: t4 },
+  { name: "Kishan", spec: "Fitness Trainer", exp: "8 years", img: t1 },
+  { name: "Yogesh", spec: "Relationship Manager", exp: "10 years", img: t2 },
+  { name: "Bhupesh", spec: "Branch Manager & Fitness Consultant", exp: "11 years", img: t3 },
+  { name: "Ankush", spec: "Fitness Trainer", exp: "7 years", img: t4 },
 ];
 
 export function Trainers() {

@@ -15,9 +15,7 @@ export function SectionHeading({
   return (
     <div className={align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
       <Reveal direction="up">
-        <span className="text-xs font-bold tracking-[0.3em] text-primary uppercase">
-          {eyebrow}
-        </span>
+        <span className="text-xs font-bold tracking-[0.3em] text-primary uppercase">{eyebrow}</span>
         <h2 className="display mt-3 text-5xl sm:text-6xl">{title}</h2>
         {subtitle && <p className="mt-4 text-muted-foreground">{subtitle}</p>}
       </Reveal>
@@ -68,9 +66,7 @@ export function WhyUs() {
                   <f.icon size={22} />
                 </span>
                 <h3 className="mt-6 text-lg font-bold tracking-wide uppercase">{f.title}</h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">
-                  {f.text}
-                </p>
+                <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">{f.text}</p>
               </article>
             </Reveal>
           ))}

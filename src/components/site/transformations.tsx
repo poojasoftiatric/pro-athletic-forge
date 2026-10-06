@@ -34,10 +34,7 @@ export function Transformations() {
                   height={1000}
                   className="absolute inset-0 h-full w-full object-cover object-center"
                 />
-                <div
-                  className="absolute inset-0 overflow-hidden"
-                  style={{ width: `${pos}%` }}
-                >
+                <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
                   <img
                     src={before1}
                     alt="Member before their Pro Athletic transformation"
@@ -83,9 +80,7 @@ export function Transformations() {
               <Reveal key={r.name} direction="right" delay={i * 120}>
                 <div className="rounded-3xl glass lift p-6">
                   <p className="display text-3xl">{r.detail}</p>
-                  <p className="mt-1.5 text-sm text-muted-foreground">
-                    {r.name} — Premium member
-                  </p>
+                  <p className="mt-1.5 text-sm text-muted-foreground">{r.name} — Premium member</p>
                 </div>
               </Reveal>
             ))}

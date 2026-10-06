@@ -11,9 +11,17 @@ import { SectionHeading } from "./why-us";
 const programs = [
   { title: "Strength Training", desc: "Progressive barbell blocks for raw power.", img: strength },
   { title: "Weight Loss", desc: "Conditioning and nutrition to shred fat fast.", img: cardio },
-  { title: "Functional Fitness", desc: "Move better with sled, rope and kettlebell work.", img: functional },
+  {
+    title: "Functional Fitness",
+    desc: "Move better with sled, rope and kettlebell work.",
+    img: functional,
+  },
   { title: "CrossFit", desc: "High-intensity WODs coached in small groups.", img: crossfit },
-  { title: "Bodybuilding", desc: "Hypertrophy programming for stage-ready shape.", img: bodybuilding },
+  {
+    title: "Bodybuilding",
+    desc: "Hypertrophy programming for stage-ready shape.",
+    img: bodybuilding,
+  },
   { title: "Cardio", desc: "Zone-based endurance on premium machines.", img: cardio },
   { title: "HIIT", desc: "45-minute intervals that torch calories.", img: crossfit },
   { title: "Yoga", desc: "Mobility, breath and recovery-focused flows.", img: yoga },

@@ -28,8 +28,7 @@ export function AppPromo() {
           </span>
           <h2 className="display mt-3 text-5xl sm:text-6xl">YOUR GYM IN YOUR POCKET</h2>
           <p className="mt-4 max-w-lg text-muted-foreground">
-            Book sessions, follow your program and watch every lift trend upward — all from
-            one app.
+            Book sessions, follow your program and watch every lift trend upward — all from one app.
           </p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
             {features.map((f) => (

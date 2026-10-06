@@ -6,7 +6,11 @@ import { SectionHeading } from "./why-us";
 const info = [
   { icon: Phone, label: "Phone", value: "+91 98200 44120" },
   { icon: Mail, label: "Email", value: "train@proathletic.fit" },
-  { icon: MapPin, label: "Address", value: "Hollywood Plaza, SCO 9-10, VIP Rd, Zirakpur, Punjab 140603" },
+  {
+    icon: MapPin,
+    label: "Address",
+    value: "Hollywood Plaza, SCO 9-10, VIP Rd, Zirakpur, Punjab 140603",
+  },
   { icon: Clock, label: "Working Hours", value: "Open 24/7 · Staffed 6am – 11pm" },
 ];
 
@@ -50,8 +54,7 @@ export function Contact() {
 
   const field =
     "mt-2 w-full rounded-2xl border border-glass-border bg-secondary/60 px-5 py-3.5 text-sm outline-none transition focus:border-primary";
-  const labelCls =
-    "text-xs font-semibold tracking-widest uppercase text-muted-foreground";
+  const labelCls = "text-xs font-semibold tracking-widest uppercase text-muted-foreground";
 
   const accessKey = import.meta.env["VITE_WEB3FORMS_ACCESS_KEY"];
 
@@ -92,26 +95,58 @@ export function Contact() {
           <Reveal direction="right">
             <form onSubmit={onSubmit} className="rounded-[2rem] glass p-8 lg:p-10">
               <input type="hidden" name="access_key" value={accessKey} />
-              <input type="hidden" name="subject" value="New Free Trial Booking - Pro Athletic Gym" />
+              <input
+                type="hidden"
+                name="subject"
+                value="New Free Trial Booking - Pro Athletic Gym"
+              />
               <input type="hidden" name="from_name" value="Pro Athletic Website" />
 
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="name" className={labelCls}>Name</label>
+                  <label htmlFor="name" className={labelCls}>
+                    Name
+                  </label>
                   <input id="name" name="name" required className={field} placeholder="Your name" />
                 </div>
                 <div>
-                  <label htmlFor="email" className={labelCls}>Email</label>
-                  <input id="email" name="email" type="email" required className={field} placeholder="you@email.com" />
+                  <label htmlFor="email" className={labelCls}>
+                    Email
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    className={field}
+                    placeholder="you@email.com"
+                  />
                 </div>
               </div>
               <div className="mt-5">
-                <label htmlFor="phone" className={labelCls}>Phone</label>
-                <input id="phone" name="phone" type="tel" required className={field} placeholder="+91" />
+                <label htmlFor="phone" className={labelCls}>
+                  Phone
+                </label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  required
+                  className={field}
+                  placeholder="+91"
+                />
               </div>
               <div className="mt-5">
-                <label htmlFor="message" className={labelCls}>Message</label>
-                <textarea id="message" name="message" rows={4} className={field} placeholder="What are you training for?" />
+                <label htmlFor="message" className={labelCls}>
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  className={field}
+                  placeholder="What are you training for?"
+                />
               </div>
               <button
                 type="submit"

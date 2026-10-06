@@ -20,13 +20,20 @@ export function Footer() {
             PRO<span className="text-primary">ATHLETIC</span>
           </a>
           <p className="mt-4 text-sm text-muted-foreground">
-            A premium athletic performance center built for people who take training
-            seriously.
+            A premium athletic performance center built for people who take training seriously.
           </p>
           <div className="mt-5 flex gap-3">
             {[
-              { icon: Instagram, href: "https://www.instagram.com/pro_athletic_gyms/", label: "Instagram" },
-              { icon: Facebook, href: "https://www.facebook.com/proathleticgymsviproadzirakpur/", label: "Facebook" },
+              {
+                icon: Instagram,
+                href: "https://www.instagram.com/pro_athletic_gyms/",
+                label: "Instagram",
+              },
+              {
+                icon: Facebook,
+                href: "https://www.facebook.com/proathleticgymsviproadzirakpur/",
+                label: "Facebook",
+              },
               { icon: Twitter, href: "https://twitter.com/", label: "Twitter" },
               { icon: Youtube, href: "https://youtube.com/", label: "YouTube" },
             ].map((s) => (

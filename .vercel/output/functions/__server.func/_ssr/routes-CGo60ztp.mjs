@@ -3,7 +3,7 @@ import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tan
 import { C as Clock, D as Car, E as Check, O as ArrowUpRight, S as CupSoda, T as ChevronLeft, _ as Instagram, a as Twitter, b as Dumbbell, c as Snowflake, d as Phone, f as Menu, g as LockKeyhole, h as Lock, i as Waves, k as Activity, l as ShieldCheck, m as Mail, n as X, o as Star, p as MapPin, r as Wifi, s as Sparkles, t as Youtube, u as Salad, v as Flame, w as ChevronRight, x as Droplets, y as Facebook } from "../_libs/lucide-react.mjs";
 import { t as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-oupc1xJT.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-CGo60ztp.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var links = [
@@ -136,18 +136,18 @@ function Counter({ to, suffix = "", duration = 1600 }) {
 }
 var stats = [
 	{
-		value: 5e3,
+		value: 500,
 		suffix: "+",
 		label: "Active Members"
 	},
 	{
-		value: 10,
+		value: 7,
 		suffix: "+",
 		label: "Certified Trainers"
 	},
 	{
-		value: 24,
-		suffix: "/7",
+		value: 18,
+		suffix: " hrs",
 		label: "Facility Access"
 	}
 ];
@@ -238,14 +238,17 @@ function Hero() {
 								}, i))
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 								className: "mt-1.5 text-xs text-muted-foreground",
-								children: "Rated 4.9 by members"
+								children: "Rated 5 by members"
 							})] }), stats.map((s) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "min-w-28",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 									className: "display text-4xl text-foreground",
 									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Counter, {
 										to: s.value,
-										suffix: s.suffix
+										suffix: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											className: "font-sans text-3xl",
+											children: s.suffix
+										})
 									})
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 									className: "mt-1 text-xs tracking-wide text-muted-foreground uppercase",
@@ -548,34 +551,30 @@ function Programs() {
 		})
 	});
 }
-var trainer_1_default = "/assets/trainer-1-rCQDGYYR.jpg";
-var trainer_2_default = "/assets/trainer-2-BACpJIEW.jpg";
-var trainer_3_default = "/assets/trainer-3-BoMPQDBB.jpg";
-var trainer_4_default = "/assets/trainer-4-Xv63h4Fx.jpg";
 var trainers = [
 	{
-		name: "Arjun Mehra",
-		spec: "Strength & Powerlifting",
-		exp: "12 years",
-		img: trainer_1_default
-	},
-	{
-		name: "Nikita Rao",
-		spec: "HIIT & Fat Loss",
+		name: "Kishan",
+		spec: "Fitness Trainer",
 		exp: "8 years",
-		img: trainer_2_default
+		img: "/assets/Kishan%20Trainer-BivygXfs.jpeg"
 	},
 	{
-		name: "Dev Kapoor",
-		spec: "Bodybuilding",
-		exp: "15 years",
-		img: trainer_3_default
+		name: "Yogesh",
+		spec: "Relationship Manager",
+		exp: "10 years",
+		img: "/assets/Yogesh-De95keAc.png"
 	},
 	{
-		name: "Sara Iyer",
-		spec: "Yoga & Mobility",
-		exp: "9 years",
-		img: trainer_4_default
+		name: "Bhupesh",
+		spec: "Branch Manager & Fitness Consultant",
+		exp: "11 years",
+		img: "/assets/Bhupesh-CAyR2HGb.png"
+	},
+	{
+		name: "Ankush",
+		spec: "Fitness Trainer",
+		exp: "7 years",
+		img: "/assets/Ankush-DfZc4gub.png"
 	}
 ];
 function Trainers() {
@@ -604,7 +603,7 @@ function Trainers() {
 									loading: "lazy",
 									width: 700,
 									height: 900,
-									className: "h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+									className: "h-full w-full object-contain object-top transition-transform duration-700 group-hover:scale-110"
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" }),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
@@ -629,7 +628,7 @@ function Trainers() {
 									children: t.name
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-									className: "mt-1 text-sm text-primary",
+									className: "mt-1 text-sm text-primary line-clamp-2 min-h-[2.5rem]",
 									children: t.spec
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
@@ -903,25 +902,25 @@ function Transformations() {
 var reviews = [
 	{
 		name: "Vikram Sethi",
-		img: trainer_1_default,
+		img: "/assets/trainer-1-rCQDGYYR.jpg",
 		rating: 5,
 		text: "The coaching is on another level. My deadlift went from 120 kg to 190 kg in a year and my back has never felt better."
 	},
 	{
 		name: "Meera Nair",
-		img: trainer_2_default,
+		img: "/assets/trainer-2-BACpJIEW.jpg",
 		rating: 5,
 		text: "Clean, premium and never overcrowded. The nutrition plan finally made fat loss feel simple and sustainable."
 	},
 	{
 		name: "Aditya Shah",
-		img: trainer_3_default,
+		img: "/assets/trainer-3-BoMPQDBB.jpg",
 		rating: 5,
 		text: "24/7 access fits my shifts, and the recovery area is worth the membership on its own."
 	},
 	{
 		name: "Priya Menon",
-		img: trainer_4_default,
+		img: "/assets/trainer-4-Xv63h4Fx.jpg",
 		rating: 5,
 		text: "The group classes feel like a team. I actually look forward to training now."
 	}

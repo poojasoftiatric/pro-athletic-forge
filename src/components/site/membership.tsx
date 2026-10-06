@@ -16,12 +16,7 @@ const plans = [
     price: "7500",
     duration: "6 Months",
     cta: "Become Premium",
-    features: [
-      "Everything in Starter",
-      "Personal Training",
-      "Nutrition Plan",
-      "Group Classes",
-    ],
+    features: ["Everything in Starter", "Personal Training", "Nutrition Plan", "Group Classes"],
     highlight: true,
   },
   {
@@ -54,9 +49,7 @@ export function Membership() {
             <Reveal key={plan.name} direction="up" delay={i * 120} className="h-full">
               <article
                 className={`relative flex h-full flex-col rounded-3xl p-8 lift ${
-                  plan.highlight
-                    ? "border border-primary/50 bg-card glow-red"
-                    : "glass"
+                  plan.highlight ? "border border-primary/50 bg-card glow-red" : "glass"
                 }`}
               >
                 {plan.highlight && (

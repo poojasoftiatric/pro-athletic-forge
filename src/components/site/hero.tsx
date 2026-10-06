@@ -3,9 +3,9 @@ import heroImg from "@/assets/hero.jpg";
 import { Counter, Reveal } from "./reveal";
 
 const stats = [
-  { value: 5000, suffix: "+", label: "Active Members" },
-  { value: 10, suffix: "+", label: "Certified Trainers" },
-  { value: 24, suffix: "/7", label: "Facility Access" },
+  { value: 500, suffix: "+", label: "Active Members" },
+  { value: 7, suffix: "+", label: "Certified Trainers" },
+  { value: 18, suffix: " hrs", label: "Facility Access" },
 ];
 
 export function Hero() {
@@ -84,12 +84,12 @@ export function Hero() {
                   <Star key={i} size={16} fill="currentColor" />
                 ))}
               </div>
-              <p className="mt-1.5 text-xs text-muted-foreground">Rated 4.9 by members</p>
+              <p className="mt-1.5 text-xs text-muted-foreground">Rated 5 by members</p>
             </div>
             {stats.map((s) => (
               <div key={s.label} className="min-w-28">
                 <p className="display text-4xl text-foreground">
-                  <Counter to={s.value} suffix={s.suffix} />
+                  <Counter to={s.value} suffix={<span className="font-sans text-3xl">{s.suffix}</span>} />
                 </p>
                 <p className="mt-1 text-xs tracking-wide text-muted-foreground uppercase">
                   {s.label}

@@ -61,7 +61,7 @@ export function Counter({
   duration = 1600,
 }: {
   to: number;
-  suffix?: string;
+  suffix?: React.ReactNode;
   duration?: number;
 }) {
   const ref = useRef<HTMLSpanElement>(null);

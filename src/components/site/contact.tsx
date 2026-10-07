@@ -59,7 +59,7 @@ export function Contact() {
   const accessKey = import.meta.env["VITE_WEB3FORMS_ACCESS_KEY"];
 
   return (
-    <section id="contact" className="relative py-24 lg:py-32">
+    <section id="contact" className="relative py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Contact"
@@ -67,12 +67,12 @@ export function Contact() {
           subtitle="One session on us. Bring your goals, we'll bring the plan."
         />
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-2">
+        <div className="mt-8 grid gap-6 lg:mt-10 lg:grid-cols-2">
           <Reveal direction="left">
             <div className="h-full overflow-hidden rounded-[2rem] glass">
               <iframe
                 title="Pro Athletic location map"
-                src="https://maps.google.com/maps?q=Hollywood%20Plaza%2C%20SCO%209-10%2C%20VIP%20Rd%2C%20Zirakpur%2C%20Punjab%20140603&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=Pro%20Athletic%20Gyms%20VIP%20Road%20Zirakpur&t=&z=16&ie=UTF8&iwloc=&output=embed"
                 loading="lazy"
                 className="h-72 w-full border-0 lg:h-80"
               />

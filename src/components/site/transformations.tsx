@@ -14,7 +14,7 @@ export function Transformations() {
   const [pos, setPos] = useState(50);
 
   return (
-    <section className="relative py-24 lg:py-32">
+    <section className="relative py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Transformations"
@@ -22,7 +22,7 @@ export function Transformations() {
           subtitle="Drag the slider to see what disciplined coaching looks like."
         />
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+        <div className="mt-8 grid gap-10 lg:mt-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <Reveal direction="left">
             <div className="relative overflow-hidden rounded-[2rem] glass">
               <div className="relative aspect-[4/5] sm:aspect-[4/3]">

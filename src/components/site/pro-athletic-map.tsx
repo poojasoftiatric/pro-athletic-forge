@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const LAT = 30.6468;
 const LNG = 76.8203;

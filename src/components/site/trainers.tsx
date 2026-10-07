@@ -3,29 +3,40 @@ import t1 from "@/assets/Kishan Trainer.jpeg";
 import t2 from "@/assets/Yogesh.png";
 import t3 from "@/assets/Bhupesh.png";
 import t4 from "@/assets/Ankush.png";
+import t5 from "@/assets/Rohit_trainer.png";
+import t6 from "@/assets/Manpreet Yoga & Dance.png";
+import t7 from "@/assets/Vasu Fitness Trainer.png";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./why-us";
 
 const trainers = [
-  { name: "Kishan", spec: "Fitness Trainer", exp: "8 years", img: t1 },
-  { name: "Yogesh", spec: "Relationship Manager", exp: "10 years", img: t2 },
   { name: "Bhupesh", spec: "Branch Manager & Fitness Consultant", exp: "11 years", img: t3 },
+  { name: "Kishan", spec: "Fitness Trainer", exp: "8 years", img: t1 },
+  { name: "Rohit", spec: "Fitness Trainer", exp: "5 years", img: t5 },
+  { name: "Vasu", spec: "Fitness Trainer", exp: "9 years", img: t7 },
   { name: "Ankush", spec: "Fitness Trainer", exp: "7 years", img: t4 },
+  { name: "Manpreet", spec: "Yoga & Dance Instructor", exp: "8 years", img: t6 },
+  { name: "Yogesh", spec: "Relationship Manager", exp: "10 years", img: t2 },
 ];
 
 export function Trainers() {
   return (
-    <section id="trainers" className="relative py-24 lg:py-32">
+    <section id="trainers" className="relative py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Trainers"
           title="COACHED BY THE BEST"
           subtitle="Every coach on the floor competes, studies and programs at a professional level."
         />
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 flex flex-wrap justify-center gap-6 lg:mt-10">
           {trainers.map((t, i) => (
-            <Reveal key={t.name} direction="up" delay={i * 100}>
-              <article className="group overflow-hidden rounded-3xl glass lift">
+            <Reveal
+              key={t.name}
+              direction="up"
+              delay={i * 100}
+              className="trainer-card-col shrink-0"
+            >
+              <article className="group h-full overflow-hidden rounded-3xl glass lift">
                 <div className="relative aspect-[3/4] overflow-hidden">
                   <img
                     src={t.img}

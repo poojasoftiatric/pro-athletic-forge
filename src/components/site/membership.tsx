@@ -37,14 +37,14 @@ const plans = [
 
 export function Membership() {
   return (
-    <section id="membership" className="relative py-24 lg:py-32">
+    <section id="membership" className="relative py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Membership"
           title="CHOOSE YOUR LEVEL"
           subtitle="No hidden fees. Cancel anytime. Every plan includes a free onboarding session."
         />
-        <div className="mt-14 grid items-stretch gap-6 lg:grid-cols-3">
+        <div className="mt-8 grid items-stretch gap-6 lg:mt-10 lg:grid-cols-3">
           {plans.map((plan, i) => (
             <Reveal key={plan.name} direction="up" delay={i * 120} className="h-full">
               <article

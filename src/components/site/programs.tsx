@@ -30,14 +30,14 @@ const programs = [
 
 export function Programs() {
   return (
-    <section id="programs" className="relative py-24 lg:py-32">
+    <section id="programs" className="relative py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Programs"
           title="TRAIN YOUR WAY"
           subtitle="Nine coached disciplines, one membership. Switch whenever your goals change."
         />
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:mt-10 lg:grid-cols-3">
           {programs.map((p, i) => (
             <Reveal key={p.title} direction="up" delay={(i % 3) * 100}>
               <article className="group h-full overflow-hidden rounded-3xl glass lift">

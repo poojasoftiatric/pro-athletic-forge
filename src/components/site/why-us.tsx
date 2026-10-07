@@ -48,14 +48,14 @@ const features = [
 
 export function WhyUs() {
   return (
-    <section id="about" className="relative py-24 lg:py-32">
+    <section id="about" className="relative py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Why Pro Athletic"
           title="BUILT FOR CHAMPIONS"
           subtitle="Everything under one roof so nothing stands between you and your next personal record."
         />
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:mt-10 lg:grid-cols-4">
           {features.map((f, i) => (
             <Reveal key={f.title} direction="up" delay={i * 100}>
               <article className="group h-full rounded-3xl glass lift p-7">

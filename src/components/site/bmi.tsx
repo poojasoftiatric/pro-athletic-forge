@@ -33,14 +33,14 @@ export function BmiCalculator() {
   const status = bmi ? statusFor(bmi) : null;
 
   return (
-    <section className="relative py-24 lg:py-32">
+    <section className="relative py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Know Your Numbers"
           title="BMI CALCULATOR"
           subtitle="Get an instant baseline, then let a coach turn it into a plan."
         />
-        <div className="mt-14 grid items-center gap-8 rounded-[2rem] glass p-8 lg:grid-cols-2 lg:p-12">
+        <div className="mt-8 grid items-center gap-8 rounded-[2rem] glass p-8 lg:mt-10 lg:grid-cols-2 lg:p-12">
           <Reveal direction="left">
             <div className="space-y-5">
               <div>

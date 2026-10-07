@@ -3,7 +3,7 @@ import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tan
 import { C as Clock, D as Car, E as Check, O as ArrowUpRight, S as CupSoda, T as ChevronLeft, _ as Instagram, a as Twitter, b as Dumbbell, c as Snowflake, d as Phone, f as Menu, g as LockKeyhole, h as Lock, i as Waves, k as Activity, l as ShieldCheck, m as Mail, n as X, o as Star, p as MapPin, r as Wifi, s as Sparkles, t as Youtube, u as Salad, v as Flame, w as ChevronRight, x as Droplets, y as Facebook } from "../_libs/lucide-react.mjs";
 import { t as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-CGo60ztp.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-CPRLn4WC.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var links = [
@@ -136,9 +136,9 @@ function Counter({ to, suffix = "", duration = 1600 }) {
 }
 var stats = [
 	{
-		value: 500,
-		suffix: "+",
-		label: "Active Members"
+		value: 4,
+		suffix: "+ Years",
+		label: "Running Successfully"
 	},
 	{
 		value: 7,
@@ -309,7 +309,7 @@ var features = [
 function WhyUs() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
 		id: "about",
-		className: "relative py-24 lg:py-32",
+		className: "relative py-8 lg:py-10",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-7xl px-5 lg:px-8",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
@@ -317,7 +317,7 @@ function WhyUs() {
 				title: "BUILT FOR CHAMPIONS",
 				subtitle: "Everything under one roof so nothing stands between you and your next personal record."
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4",
+				className: "mt-8 grid gap-6 sm:grid-cols-2 lg:mt-10 lg:grid-cols-4",
 				children: features.map((f, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
 					direction: "up",
 					delay: i * 100,
@@ -388,7 +388,7 @@ var plans = [
 function Membership() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
 		id: "membership",
-		className: "relative py-24 lg:py-32",
+		className: "relative py-8 lg:py-10",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-7xl px-5 lg:px-8",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
@@ -396,7 +396,7 @@ function Membership() {
 				title: "CHOOSE YOUR LEVEL",
 				subtitle: "No hidden fees. Cancel anytime. Every plan includes a free onboarding session."
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "mt-14 grid items-stretch gap-6 lg:grid-cols-3",
+				className: "mt-8 grid items-stretch gap-6 lg:mt-10 lg:grid-cols-3",
 				children: plans.map((plan, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
 					direction: "up",
 					delay: i * 120,
@@ -503,7 +503,7 @@ var programs$1 = [
 function Programs() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
 		id: "programs",
-		className: "relative py-24 lg:py-32",
+		className: "relative py-8 lg:py-10",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-7xl px-5 lg:px-8",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
@@ -511,7 +511,7 @@ function Programs() {
 				title: "TRAIN YOUR WAY",
 				subtitle: "Nine coached disciplines, one membership. Switch whenever your goals change."
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3",
+				className: "mt-8 grid gap-6 sm:grid-cols-2 lg:mt-10 lg:grid-cols-3",
 				children: programs$1.map((p, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
 					direction: "up",
 					delay: i % 3 * 100,
@@ -553,34 +553,52 @@ function Programs() {
 }
 var trainers = [
 	{
-		name: "Kishan",
-		spec: "Fitness Trainer",
-		exp: "8 years",
-		img: "/assets/Kishan%20Trainer-BivygXfs.jpeg"
-	},
-	{
-		name: "Yogesh",
-		spec: "Relationship Manager",
-		exp: "10 years",
-		img: "/assets/Yogesh-De95keAc.png"
-	},
-	{
 		name: "Bhupesh",
 		spec: "Branch Manager & Fitness Consultant",
 		exp: "11 years",
 		img: "/assets/Bhupesh-CAyR2HGb.png"
 	},
 	{
+		name: "Kishan",
+		spec: "Fitness Trainer",
+		exp: "8 years",
+		img: "/assets/Kishan%20Trainer-BivygXfs.jpeg"
+	},
+	{
+		name: "Rohit",
+		spec: "Fitness Trainer",
+		exp: "5 years",
+		img: "/assets/Rohit_trainer-Dmpm622p.png"
+	},
+	{
+		name: "Vasu",
+		spec: "Fitness Trainer",
+		exp: "9 years",
+		img: "/assets/Vasu%20Fitness%20Trainer-BuPvxKLB.png"
+	},
+	{
 		name: "Ankush",
 		spec: "Fitness Trainer",
 		exp: "7 years",
 		img: "/assets/Ankush-DfZc4gub.png"
+	},
+	{
+		name: "Manpreet",
+		spec: "Yoga & Dance Instructor",
+		exp: "8 years",
+		img: "/assets/Manpreet%20Yoga%20_%20Dance-DxLWe4H6.png"
+	},
+	{
+		name: "Yogesh",
+		spec: "Relationship Manager",
+		exp: "10 years",
+		img: "/assets/Yogesh-De95keAc.png"
 	}
 ];
 function Trainers() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
 		id: "trainers",
-		className: "relative py-24 lg:py-32",
+		className: "relative py-8 lg:py-10",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-7xl px-5 lg:px-8",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
@@ -588,12 +606,13 @@ function Trainers() {
 				title: "COACHED BY THE BEST",
 				subtitle: "Every coach on the floor competes, studies and programs at a professional level."
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4",
+				className: "mt-8 flex flex-wrap justify-center gap-6 lg:mt-10",
 				children: trainers.map((t, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
 					direction: "up",
 					delay: i * 100,
+					className: "trainer-card-col shrink-0",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
-						className: "group overflow-hidden rounded-3xl glass lift",
+						className: "group h-full overflow-hidden rounded-3xl glass lift",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "relative aspect-[3/4] overflow-hidden",
 							children: [
@@ -679,7 +698,7 @@ function BmiCalculator() {
 	};
 	const status = bmi ? statusFor(bmi) : null;
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
-		className: "relative py-24 lg:py-32",
+		className: "relative py-8 lg:py-10",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-7xl px-5 lg:px-8",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
@@ -687,7 +706,7 @@ function BmiCalculator() {
 				title: "BMI CALCULATOR",
 				subtitle: "Get an instant baseline, then let a coach turn it into a plan."
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "mt-14 grid items-center gap-8 rounded-[2rem] glass p-8 lg:grid-cols-2 lg:p-12",
+				className: "mt-8 grid items-center gap-8 rounded-[2rem] glass p-8 lg:mt-10 lg:grid-cols-2 lg:p-12",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
 					direction: "left",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -803,7 +822,7 @@ var results = [
 function Transformations() {
 	const [pos, setPos] = (0, import_react.useState)(50);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
-		className: "relative py-24 lg:py-32",
+		className: "relative py-8 lg:py-10",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-7xl px-5 lg:px-8",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
@@ -811,7 +830,7 @@ function Transformations() {
 				title: "REAL RESULTS",
 				subtitle: "Drag the slider to see what disciplined coaching looks like."
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "mt-14 grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center",
+				className: "mt-8 grid gap-10 lg:mt-10 lg:grid-cols-[1.1fr_1fr] lg:items-center",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
 					direction: "left",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -901,81 +920,138 @@ function Transformations() {
 }
 var reviews = [
 	{
-		name: "Vikram Sethi",
-		img: "/assets/trainer-1-rCQDGYYR.jpg",
+		name: "Shivali Verma",
 		rating: 5,
-		text: "The coaching is on another level. My deadlift went from 120 kg to 190 kg in a year and my back has never felt better."
+		time: "4 weeks ago",
+		text: "Great facility, modern equipment, and a very positive training atmosphere. Special shoutout to my trainer Rohit for his dedication and clear guidance. He keeps every workout session engaging and effective. 5 stars all the way"
 	},
 	{
-		name: "Meera Nair",
-		img: "/assets/trainer-2-BACpJIEW.jpg",
+		name: "Reeva Talwar",
 		rating: 5,
-		text: "Clean, premium and never overcrowded. The nutrition plan finally made fat loss feel simple and sustainable."
+		time: "a year ago",
+		text: "Absolutely love this gym! I've been training here for a while now, and I can confidently say it's one of the best gyms in the area. The equipment is top-notch and always clean, and there's plenty of space, so I never feel cramped—even during peak hours. The staff is super friendly, knowledgeable, and always willing to help, whether it's with form correction, workout advice, or just a quick chat for motivation. The vibe here is really positive and welcoming, no matter your fitness level."
 	},
 	{
-		name: "Aditya Shah",
-		img: "/assets/trainer-3-BoMPQDBB.jpg",
+		name: "Vishesh Birla",
 		rating: 5,
-		text: "24/7 access fits my shifts, and the recovery area is worth the membership on its own."
+		time: "7 months ago",
+		text: "I've been going to this gym for a few months now and I really love it. The equipment is modern and always clean, which is very important to me. The staff are friendly and always ready to help if you have a question. It has a great atmosphere that makes me feel motivated to work out. Highly recommended. Especially Rohit bhai, who helps really much and tells me the best technique to perform the exercises"
 	},
 	{
-		name: "Priya Menon",
-		img: "/assets/trainer-4-Xv63h4Fx.jpg",
+		name: "Amisha Tiwari",
 		rating: 5,
-		text: "The group classes feel like a team. I actually look forward to training now."
+		time: "2 months ago",
+		text: "I've been working out here for a while, and it's been a great experience. The gym is clean, the equipment is well maintained, and the staff is friendly and supportive. Definitely a good place to stay consistent with your fitness goals✨"
+	},
+	{
+		name: "Chandan Kumar Yadav",
+		rating: 5,
+		time: "a month ago",
+		text: "It was best experience working out here... Must join if someone wants to transform without taking personal training... I am very happy with their equipment"
+	},
+	{
+		name: "Srishti Sharma",
+		rating: 5,
+		time: "6 months ago",
+		text: "A good gym. Trainers are amazing especially Rohit Sahota. He gives personal attention to all his clients and a very knowledgeable guy. Provides results. Must Join.."
+	},
+	{
+		name: "Nehaa Sharma",
+		rating: 5,
+		time: "a month ago",
+		text: "Clean, well-equipped, and professionally managed gym. The staff is friendly and the overall environment is very motivating. Great experience so far!"
 	}
 ];
+function GoogleIcon() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+		className: "h-3.5 w-3.5 shrink-0",
+		viewBox: "0 0 24 24",
+		"aria-hidden": "true",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
+				fill: "#4285F4",
+				d: "M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
+				fill: "#34A853",
+				d: "M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
+				fill: "#FBBC05",
+				d: "M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.17 0 9.99 0 12s.45 3.83 1.25 5.42l4.03-3.15z"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
+				fill: "#EA4335",
+				d: "M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"
+			})
+		]
+	});
+}
 function Testimonials() {
 	const [index, setIndex] = (0, import_react.useState)(0);
 	const move = (d) => setIndex((i) => (i + d + reviews.length) % reviews.length);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
 		id: "testimonials",
-		className: "relative py-24 lg:py-32",
+		className: "relative py-8 lg:py-10",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-7xl px-5 lg:px-8",
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
 					eyebrow: "Testimonials",
 					title: "MEMBER VOICES",
-					subtitle: "5,000+ athletes train here. Here's what a few of them say."
+					subtitle: "Real reviews from our Google verified members."
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-					className: "mt-14 overflow-hidden",
+					className: "mt-8 overflow-hidden lg:mt-10",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						className: "flex transition-transform duration-700 ease-out",
 						style: { transform: `translateX(-${index * 100}%)` },
 						children: reviews.map((r) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("figure", {
 							className: "w-full shrink-0 px-2",
 							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "mx-auto max-w-3xl rounded-[2rem] glass p-8 text-center lg:p-12",
+								className: "mx-auto max-w-2xl rounded-3xl glass p-6 sm:p-8 text-center",
 								children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-										src: r.img,
-										alt: r.name,
-										loading: "lazy",
-										width: 700,
-										height: 900,
-										className: "mx-auto h-20 w-20 rounded-full object-cover object-top ring-2 ring-primary/60"
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "flex flex-wrap items-center justify-center gap-3",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+											className: "flex h-12 w-12 items-center justify-center rounded-full text-base font-bold text-white shadow-md ring-2 ring-primary/60 bg-gradient-to-br from-primary to-primary/70",
+											children: r.name.charAt(0)
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "text-left",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("figcaption", {
+												className: "text-sm font-bold tracking-wide uppercase text-foreground",
+												children: r.name
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+												className: "mt-0.5 flex items-center gap-1.5 text-xs text-muted-foreground",
+												children: [
+													/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+														className: "inline-flex items-center gap-1 text-[11px] font-medium text-muted-foreground",
+														children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(GoogleIcon, {}), " Google Review"]
+													}),
+													/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "·" }),
+													/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+														className: "text-[11px]",
+														children: r.time
+													})
+												]
+											})]
+										})]
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "mt-4 flex justify-center gap-1 text-primary",
+										className: "mt-3 flex justify-center gap-1 text-primary",
 										"aria-label": `${r.rating} out of 5`,
 										children: Array.from({ length: r.rating }).map((_, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Star, {
-											size: 15,
+											size: 14,
 											fill: "currentColor"
 										}, i))
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("blockquote", {
-										className: "mt-5 text-lg leading-relaxed text-foreground/90",
+										className: "mt-3.5 text-sm leading-relaxed text-foreground/90 sm:text-base",
 										children: [
 											"“",
 											r.text,
 											"”"
 										]
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("figcaption", {
-										className: "mt-5 text-sm font-bold tracking-widest uppercase",
-										children: r.name
 									})
 								]
 							})
@@ -983,14 +1059,14 @@ function Testimonials() {
 					})
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "mt-8 flex items-center justify-center gap-4",
+					className: "mt-6 flex items-center justify-center gap-4",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 							type: "button",
 							"aria-label": "Previous testimonial",
 							onClick: () => move(-1),
-							className: "rounded-full glass p-3 transition hover:border-primary hover:text-primary",
-							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronLeft, { size: 18 })
+							className: "rounded-full glass p-2.5 transition hover:border-primary hover:text-primary",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronLeft, { size: 16 })
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 							className: "flex gap-2",
@@ -998,15 +1074,15 @@ function Testimonials() {
 								type: "button",
 								"aria-label": `Go to testimonial ${i + 1}`,
 								onClick: () => setIndex(i),
-								className: `h-2 rounded-full transition-all duration-300 ${i === index ? "w-7 bg-primary" : "w-2 bg-muted"}`
+								className: `h-2 rounded-full transition-all duration-300 ${i === index ? "w-6 bg-primary" : "w-2 bg-muted"}`
 							}, r.name))
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 							type: "button",
 							"aria-label": "Next testimonial",
 							onClick: () => move(1),
-							className: "rounded-full glass p-3 transition hover:border-primary hover:text-primary",
-							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronRight, { size: 18 })
+							className: "rounded-full glass p-2.5 transition hover:border-primary hover:text-primary",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronRight, { size: 16 })
 						})
 					]
 				})
@@ -1055,7 +1131,7 @@ var shots = [
 function Gallery() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
 		id: "gallery",
-		className: "relative py-24 lg:py-32",
+		className: "relative py-8 lg:py-10",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-7xl px-5 lg:px-8",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
@@ -1063,7 +1139,7 @@ function Gallery() {
 				title: "INSIDE THE FLOOR",
 				subtitle: "Every zone engineered for focused, uninterrupted training."
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "mt-14 columns-1 gap-5 sm:columns-2 lg:columns-3 [&>*]:mb-5",
+				className: "mt-8 columns-1 gap-5 sm:columns-2 lg:mt-10 lg:columns-3 [&>*]:mb-5",
 				children: shots.map((s, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
 					direction: "up",
 					delay: i % 3 * 100,
@@ -1130,7 +1206,7 @@ var facilities = [
 ];
 function Facilities() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
-		className: "relative py-24 lg:py-32",
+		className: "relative py-8 lg:py-10",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-7xl px-5 lg:px-8",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
@@ -1138,7 +1214,7 @@ function Facilities() {
 				title: "EVERY DETAIL COVERED",
 				subtitle: "Amenities that make training the easiest part of your day."
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5",
+				className: "mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-10 lg:grid-cols-5",
 				children: facilities.map((f, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
 					direction: "scale",
 					delay: i % 5 * 80,
@@ -1229,7 +1305,7 @@ function Contact() {
 	}["VITE_WEB3FORMS_ACCESS_KEY"];
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
 		id: "contact",
-		className: "relative py-24 lg:py-32",
+		className: "relative py-8 lg:py-10",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-7xl px-5 lg:px-8",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
@@ -1237,14 +1313,14 @@ function Contact() {
 				title: "BOOK A FREE TRIAL",
 				subtitle: "One session on us. Bring your goals, we'll bring the plan."
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "mt-14 grid gap-6 lg:grid-cols-2",
+				className: "mt-8 grid gap-6 lg:mt-10 lg:grid-cols-2",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
 					direction: "left",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "h-full overflow-hidden rounded-[2rem] glass",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("iframe", {
 							title: "Pro Athletic location map",
-							src: "https://maps.google.com/maps?q=Hollywood%20Plaza%2C%20SCO%209-10%2C%20VIP%20Rd%2C%20Zirakpur%2C%20Punjab%20140603&t=&z=16&ie=UTF8&iwloc=&output=embed",
+							src: "https://maps.google.com/maps?q=Pro%20Athletic%20Gyms%20VIP%20Road%20Zirakpur&t=&z=16&ie=UTF8&iwloc=&output=embed",
 							loading: "lazy",
 							className: "h-72 w-full border-0 lg:h-80"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
@@ -1374,15 +1450,55 @@ var programs = [
 	"Yoga"
 ];
 function Footer() {
-	const [joined, setJoined] = (0, import_react.useState)(false);
-	const onSubmit = (e) => {
+	const [isSubmitting, setIsSubmitting] = (0, import_react.useState)(false);
+	const [resultMessage, setResultMessage] = (0, import_react.useState)("");
+	const [isSuccess, setIsSuccess] = (0, import_react.useState)(false);
+	const accessKey = {
+		"BASE_URL": "/",
+		"DEV": false,
+		"MODE": "production",
+		"PROD": true,
+		"SSR": true,
+		"TSS_DEV_SERVER": "false",
+		"TSS_DEV_SSR_STYLES_BASEPATH": "/",
+		"TSS_DEV_SSR_STYLES_ENABLED": "true",
+		"TSS_DISABLE_CSRF_MIDDLEWARE_WARNING": "false",
+		"TSS_INLINE_CSS_ENABLED": "false",
+		"TSS_ROUTER_BASEPATH": "",
+		"TSS_SERVER_FN_BASE": "/_serverFn/",
+		"VITE_WEB3FORMS_ACCESS_KEY": "91cbcb58-076c-4178-aa1a-dfc835738b99"
+	}["VITE_WEB3FORMS_ACCESS_KEY"];
+	const onSubmit = async (e) => {
 		e.preventDefault();
-		setJoined(true);
+		setIsSubmitting(true);
+		setResultMessage("Subscribing...");
+		setIsSuccess(false);
+		const form = e.currentTarget;
+		const formData = new FormData(form);
+		try {
+			const data = await (await fetch("https://api.web3forms.com/submit", {
+				method: "POST",
+				body: formData
+			})).json();
+			if (data.success) {
+				setIsSuccess(true);
+				setResultMessage("Thanks! You're subscribed.");
+				form.reset();
+			} else {
+				setIsSuccess(false);
+				setResultMessage(data.message || "Something went wrong. Please try again.");
+			}
+		} catch {
+			setIsSuccess(false);
+			setResultMessage("Something went wrong. Please check your internet connection.");
+		} finally {
+			setIsSubmitting(false);
+		}
 	};
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("footer", {
 		className: "border-t border-glass-border bg-surface/60",
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-4 lg:px-8",
+			className: "mx-auto grid max-w-7xl gap-10 px-5 py-8 lg:grid-cols-4 lg:px-8 lg:py-10",
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
@@ -1471,6 +1587,21 @@ function Footer() {
 						onSubmit,
 						className: "mt-4 flex gap-2",
 						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+								type: "hidden",
+								name: "access_key",
+								value: accessKey
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+								type: "hidden",
+								name: "subject",
+								value: "New Newsletter Subscriber - Pro Athletic Gyms"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+								type: "hidden",
+								name: "from_name",
+								value: "Pro Athletic Website"
+							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
 								htmlFor: "newsletter",
 								className: "sr-only",
@@ -1478,6 +1609,7 @@ function Footer() {
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
 								id: "newsletter",
+								name: "email",
 								type: "email",
 								required: true,
 								placeholder: "you@email.com",
@@ -1485,16 +1617,17 @@ function Footer() {
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 								type: "submit",
-								className: "rounded-full px-5 py-2.5 text-sm font-bold text-primary-foreground transition hover:glow-red",
+								disabled: isSubmitting,
+								className: "rounded-full px-5 py-2.5 text-sm font-bold text-primary-foreground transition hover:glow-red disabled:cursor-not-allowed disabled:opacity-50",
 								style: { background: "var(--gradient-red)" },
-								children: "Join"
+								children: isSubmitting ? "..." : "Join"
 							})
 						]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						"aria-live": "polite",
-						className: "mt-2 min-h-4 text-xs text-primary",
-						children: joined ? "You're subscribed." : ""
+						className: `mt-2 min-h-4 text-xs ${isSuccess ? "text-primary" : "text-red-400"}`,
+						children: resultMessage
 					})
 				] })
 			]
@@ -1503,7 +1636,7 @@ function Footer() {
 			children: [
 				"© ",
 				(/* @__PURE__ */ new Date()).getFullYear(),
-				" Pro Athletic. All rights reserved."
+				" Pro Athletic Gyms. All rights reserved."
 			]
 		})]
 	});

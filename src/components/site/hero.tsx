@@ -3,7 +3,7 @@ import heroImg from "@/assets/hero.jpg";
 import { Counter, Reveal } from "./reveal";
 
 const stats = [
-  { value: 500, suffix: "+", label: "Active Members" },
+  { value: 4, suffix: "+ Years", label: "Running Successfully" },
   { value: 7, suffix: "+", label: "Certified Trainers" },
   { value: 18, suffix: " hrs", label: "Facility Access" },
 ];

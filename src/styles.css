@@ -1,5 +1,4 @@
-@import "tailwindcss" source(none);
-@source "../src";
+@import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -181,5 +180,22 @@
   }
   50% {
     transform: translateY(-16px);
+  }
+}
+
+.trainer-card-col {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .trainer-card-col {
+    width: calc((100% - 1.5rem) / 2);
+  }
+}
+
+@media (min-width: 1024px) {
+  .trainer-card-col {
+    width: calc((100% - 4.5rem) / 4);
+    max-width: calc((100% - 4.5rem) / 4);
   }
 }

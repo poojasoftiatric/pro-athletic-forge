@@ -5,16 +5,48 @@ const quick = ["Home", "About", "Programs", "Membership", "Trainers", "Contact"]
 const programs = ["Strength Training", "Weight Loss", "CrossFit", "Bodybuilding", "Yoga"];
 
 export function Footer() {
-  const [joined, setJoined] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [resultMessage, setResultMessage] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const accessKey = import.meta.env["VITE_WEB3FORMS_ACCESS_KEY"];
+
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setJoined(true);
+    setIsSubmitting(true);
+    setResultMessage("Subscribing...");
+    setIsSuccess(false);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSuccess(true);
+        setResultMessage("Thanks! You're subscribed.");
+        form.reset();
+      } else {
+        setIsSuccess(false);
+        setResultMessage(data.message || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setIsSuccess(false);
+      setResultMessage("Something went wrong. Please check your internet connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <footer className="border-t border-glass-border bg-surface/60">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-4 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-8 lg:grid-cols-4 lg:px-8 lg:py-10">
         <div>
           <a href="#home" className="display text-2xl tracking-widest">
             PRO<span className="text-primary">ATHLETIC</span>
@@ -89,11 +121,19 @@ export function Footer() {
             Training tips and member offers, once a month.
           </p>
           <form onSubmit={onSubmit} className="mt-4 flex gap-2">
+            <input type="hidden" name="access_key" value={accessKey} />
+            <input
+              type="hidden"
+              name="subject"
+              value="New Newsletter Subscriber - Pro Athletic Gyms"
+            />
+            <input type="hidden" name="from_name" value="Pro Athletic Website" />
             <label htmlFor="newsletter" className="sr-only">
               Email address
             </label>
             <input
               id="newsletter"
+              name="email"
               type="email"
               required
               placeholder="you@email.com"
@@ -101,20 +141,24 @@ export function Footer() {
             />
             <button
               type="submit"
-              className="rounded-full px-5 py-2.5 text-sm font-bold text-primary-foreground transition hover:glow-red"
+              disabled={isSubmitting}
+              className="rounded-full px-5 py-2.5 text-sm font-bold text-primary-foreground transition hover:glow-red disabled:cursor-not-allowed disabled:opacity-50"
               style={{ background: "var(--gradient-red)" }}
             >
-              Join
+              {isSubmitting ? "..." : "Join"}
             </button>
           </form>
-          <p aria-live="polite" className="mt-2 min-h-4 text-xs text-primary">
-            {joined ? "You're subscribed." : ""}
+          <p
+            aria-live="polite"
+            className={`mt-2 min-h-4 text-xs ${isSuccess ? "text-primary" : "text-red-400"}`}
+          >
+            {resultMessage}
           </p>
         </div>
       </div>
 
       <div className="border-t border-glass-border py-6 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Pro Athletic. All rights reserved.
+        © {new Date().getFullYear()} Pro Athletic Gyms. All rights reserved.
       </div>
     </footer>
   );

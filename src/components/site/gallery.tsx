@@ -18,14 +18,14 @@ const shots = [
 
 export function Gallery() {
   return (
-    <section id="gallery" className="relative py-24 lg:py-32">
+    <section id="gallery" className="relative py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Gallery"
           title="INSIDE THE FLOOR"
           subtitle="Every zone engineered for focused, uninterrupted training."
         />
-        <div className="mt-14 columns-1 gap-5 sm:columns-2 lg:columns-3 [&>*]:mb-5">
+        <div className="mt-8 columns-1 gap-5 sm:columns-2 lg:mt-10 lg:columns-3 [&>*]:mb-5">
           {shots.map((s, i) => (
             <Reveal key={s.label} direction="up" delay={(i % 3) * 100}>
               <figure className="group relative overflow-hidden rounded-3xl glass break-inside-avoid">

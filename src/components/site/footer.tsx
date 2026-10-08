@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import logoPag from "@/assets/Logo_PAG.jpeg";
 
 const quick = ["Home", "About", "Programs", "Membership", "Trainers", "Contact"];
 const programs = ["Strength Training", "Weight Loss", "CrossFit", "Bodybuilding", "Yoga"];
@@ -48,8 +49,15 @@ export function Footer() {
     <footer className="border-t border-glass-border bg-surface/60">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-8 lg:grid-cols-4 lg:px-8 lg:py-10">
         <div>
-          <a href="#home" className="display text-2xl tracking-widest">
-            PRO<span className="text-primary">ATHLETIC</span>
+          <a href="#home" className="flex items-center gap-2.5 display text-2xl tracking-widest">
+            <img
+              src={logoPag}
+              alt="Pro Athletic Gyms Logo"
+              className="h-9 w-9 shrink-0 rounded-full object-cover"
+            />
+            <span>
+              PRO<span className="text-primary">ATHLETIC</span>
+            </span>
           </a>
           <p className="mt-4 text-sm text-muted-foreground">
             A premium athletic performance center built for people who take training seriously.

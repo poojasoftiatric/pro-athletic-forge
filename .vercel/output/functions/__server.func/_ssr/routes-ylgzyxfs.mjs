@@ -1,11 +1,12 @@
 import { r as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
-import { C as Clock, D as Car, E as Check, O as ArrowUpRight, S as CupSoda, T as ChevronLeft, _ as Instagram, a as Twitter, b as Dumbbell, c as Snowflake, d as Phone, f as Menu, g as LockKeyhole, h as Lock, i as Waves, k as Activity, l as ShieldCheck, m as Mail, n as X, o as Star, p as MapPin, r as Wifi, s as Sparkles, t as Youtube, u as Salad, v as Flame, w as ChevronRight, x as Droplets, y as Facebook } from "../_libs/lucide-react.mjs";
+import { A as Activity, C as CupSoda, D as Check, E as ChevronLeft, O as Car, S as Droplets, T as ChevronRight, _ as Instagram, a as Twitter, b as ExternalLink, c as Snowflake, d as Phone, f as Menu, g as LockKeyhole, h as Lock, i as Waves, k as ArrowUpRight, l as ShieldCheck, m as Mail, n as X, o as Star, p as MapPin, r as Wifi, s as Sparkles, t as Youtube, u as Salad, v as Flame, w as Clock, x as Dumbbell, y as Facebook } from "../_libs/lucide-react.mjs";
 import { t as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-CPRLn4WC.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-ylgzyxfs.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
+var Logo_PAG_default = "/assets/Logo_PAG-DxjghSFF.jpeg";
 var links = [
 	["Home", "#home"],
 	["About", "#about"],
@@ -33,11 +34,15 @@ function Navbar() {
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 					href: "#home",
-					className: "display text-2xl tracking-widest",
-					children: ["PRO", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+					className: "flex items-center gap-2.5 display text-2xl tracking-widest",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+						src: Logo_PAG_default,
+						alt: "Pro Athletic Gyms Logo",
+						className: "h-9 w-9 shrink-0 rounded-full object-cover"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: ["PRO", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 						className: "text-primary",
 						children: "ATHLETIC"
-					})]
+					})] })]
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
 					className: "hidden items-center gap-7 xl:flex",
@@ -918,7 +923,74 @@ function Transformations() {
 		})
 	});
 }
+var GOOGLE_REVIEWS_URL = "https://www.google.com/search?sca_esv=e2130cf16db8d2a2&sxsrf=APpeQntzi5jLFHDqa4IWnNN5PKpXGsC_xw:1791453936095&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_8zkAoHjfzahqKW6hAfkAOgt5LDl5F_hb9GPlQSg7Whgxk7Z_9lYKiZSA5mfT2KzBkC5u52ZalmB3ISS2W3o4xcf8kWEPtjw7FrmywLO_XcYSrQY-Q%3D%3D&q=Pro+Athletic+Gyms+VIP+Road+Reviews&sa=X&ved=2ahUKEwiu4Pf7laqXAxX-yzgGHf0ZIqkQ0bkNegQILBAF&biw=1280&bih=585&dpr=1.5";
 var reviews = [
+	{
+		name: "Param",
+		rating: 5,
+		time: "3 months ago",
+		text: "The gym has a very positive aura and all the equipment are well maintained, also the staff is very cooperative and the gym trainer Mr. Rohit is also very helpful."
+	},
+	{
+		name: "Jatin Kumar",
+		rating: 5,
+		time: "a year ago",
+		text: "There’s a good variety of machines and free weights, and I never have to wait long to use anything. The group classes are also a great bonus—motivating and well-led by professional trainers. Overall, it’s a great place to stay fit and healthy. I would definitely recommend it to anyone looking for a quality gym!"
+	},
+	{
+		name: "Ajay Kumar",
+		rating: 5,
+		time: "7 months ago",
+		text: "Best gym of Zirakpur... Me and my wife are working out here from 3 years and we got amazing results. They have so many machines of each muscle group, ambience is so nice and prices are affordable for everyone."
+	},
+	{
+		name: "Shubham Gauhar",
+		rating: 5,
+		time: "9 months ago",
+		text: "Love this gym and ambience here! Having the best experience with the support of Kishan here. Suggest you to must visit."
+	},
+	{
+		name: "Shailendra Jain",
+		rating: 5,
+		time: "8 months ago",
+		text: "It was an excellent experience. All equipment are well maintained, machines are working properly, and very hygienic."
+	},
+	{
+		name: "Hemant Kumar",
+		rating: 5,
+		time: "10 months ago",
+		text: "This is the best gym in Zirakpur, the equipment is top brand and better is the gym trainer here. I'm feeling great. Thanks!"
+	},
+	{
+		name: "Bhavna Notyal",
+		rating: 5,
+		time: "7 months ago",
+		text: "Well equipped gym, good atmosphere and the staff is good. Trainer Kishan is very polite and gives the best guidance."
+	},
+	{
+		name: "Saksham Sharma",
+		rating: 5,
+		time: "a year ago",
+		text: "Best gym in this area! Very good equipment and well maintained. One of the best hours of my day is spent there."
+	},
+	{
+		name: "Parvaiz Sajad",
+		rating: 5,
+		time: "9 months ago",
+		text: "Pro Athletic Gyms is the best gym having a clean, motivating environment with good equipment, and trainer Rohit is knowledgeable, supportive, and ensures proper guidance throughout workouts."
+	},
+	{
+		name: "Vishal Kumar",
+		rating: 5,
+		time: "7 months ago",
+		text: "Best gym for athletes... as they have heavy duty equipment. I feel motivated and the training staff is very helpful. Even without personal training, they treat you very well."
+	},
+	{
+		name: "Ajit Singh",
+		rating: 5,
+		time: "9 months ago",
+		text: "Good gym, very nice environment, and best trainer Kishan Singh fully cooperates."
+	},
 	{
 		name: "Shivali Verma",
 		rating: 5,
@@ -1006,7 +1078,7 @@ function Testimonials() {
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						className: "flex transition-transform duration-700 ease-out",
 						style: { transform: `translateX(-${index * 100}%)` },
-						children: reviews.map((r) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("figure", {
+						children: reviews.map((r, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("figure", {
 							className: "w-full shrink-0 px-2",
 							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "mx-auto max-w-2xl rounded-3xl glass p-6 sm:p-8 text-center",
@@ -1055,7 +1127,7 @@ function Testimonials() {
 									})
 								]
 							})
-						}, r.name))
+						}, `${r.name}-${i}`))
 					})
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -1069,13 +1141,13 @@ function Testimonials() {
 							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronLeft, { size: 16 })
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							className: "flex gap-2",
+							className: "flex max-w-md flex-wrap items-center justify-center gap-1.5",
 							children: reviews.map((r, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 								type: "button",
 								"aria-label": `Go to testimonial ${i + 1}`,
 								onClick: () => setIndex(i),
 								className: `h-2 rounded-full transition-all duration-300 ${i === index ? "w-6 bg-primary" : "w-2 bg-muted"}`
-							}, r.name))
+							}, `${r.name}-${i}`))
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 							type: "button",
@@ -1085,6 +1157,23 @@ function Testimonials() {
 							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronRight, { size: 16 })
 						})
 					]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "mt-8 flex justify-center",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+						href: GOOGLE_REVIEWS_URL,
+						target: "_blank",
+						rel: "noopener noreferrer",
+						className: "group inline-flex items-center gap-2.5 rounded-full border border-glass-border glass px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:border-primary/60 hover:text-primary hover:glow-red",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(GoogleIcon, {}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "See More Google Reviews" }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, {
+								size: 15,
+								className: "text-muted-foreground transition-transform duration-300 group-hover:translate-x-0.5 group-hover:text-primary"
+							})
+						]
+					})
 				})
 			]
 		})
@@ -1503,11 +1592,15 @@ function Footer() {
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 						href: "#home",
-						className: "display text-2xl tracking-widest",
-						children: ["PRO", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "flex items-center gap-2.5 display text-2xl tracking-widest",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: Logo_PAG_default,
+							alt: "Pro Athletic Gyms Logo",
+							className: "h-9 w-9 shrink-0 rounded-full object-cover"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: ["PRO", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-primary",
 							children: "ATHLETIC"
-						})]
+						})] })]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "mt-4 text-sm text-muted-foreground",

@@ -276,6 +276,26 @@ var Dumbbell = createLucideIcon("dumbbell", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var ExternalLink = createLucideIcon("external-link", [
+	["path", {
+		d: "M15 3h6v6",
+		key: "1q9fwt"
+	}],
+	["path", {
+		d: "M10 14 21 3",
+		key: "gplh6r"
+	}],
+	["path", {
+		d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6",
+		key: "a6xqqp"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var Facebook = createLucideIcon("facebook", [["path", {
 	d: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z",
 	key: "1jg4f8"
@@ -638,4 +658,4 @@ var Youtube = createLucideIcon("youtube", [["path", {
 	key: "1jp15x"
 }]]);
 //#endregion
-export { Clock as C, Car as D, Check as E, ArrowUpRight as O, CupSoda as S, ChevronLeft as T, Instagram as _, Twitter as a, Dumbbell as b, Snowflake as c, Phone as d, Menu as f, LockKeyhole as g, Lock as h, Waves as i, Activity as k, ShieldCheck as l, Mail as m, X as n, Star as o, MapPin as p, Wifi as r, Sparkles as s, Youtube as t, Salad as u, Flame as v, ChevronRight as w, Droplets as x, Facebook as y };
+export { Activity as A, CupSoda as C, Check as D, ChevronLeft as E, Car as O, Droplets as S, ChevronRight as T, Instagram as _, Twitter as a, ExternalLink as b, Snowflake as c, Phone as d, Menu as f, LockKeyhole as g, Lock as h, Waves as i, ArrowUpRight as k, ShieldCheck as l, Mail as m, X as n, Star as o, MapPin as p, Wifi as r, Sparkles as s, Youtube as t, Salad as u, Flame as v, Clock as w, Dumbbell as x, Facebook as y };

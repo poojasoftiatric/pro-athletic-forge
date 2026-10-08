@@ -1,9 +1,9 @@
 import { n as require_jsx_runtime, t as QueryClientProvider } from "../_libs/react+tanstack__react-query.mjs";
 import { _ as createFileRoute, b as useRouter, d as Scripts, f as HeadContent, g as lazyRouteComponent, h as Outlet, m as createRouter, v as createRootRouteWithContext, y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-eJJtWwin.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DRhZ2O_q.js
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-Dg0Xz5m1.css";
+var styles_default = "/assets/styles-DeMOBp0u.css";
 function NotFoundComponent() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		className: "flex min-h-screen items-center justify-center bg-background px-4",
@@ -114,17 +114,17 @@ var Route$1 = createRootRouteWithContext()({
 			},
 			{
 				rel: "icon",
-				href: "/favicon.png",
+				href: "/favicon.png?v=2",
 				type: "image/png"
 			},
 			{
 				rel: "icon",
-				href: "/favicon.ico",
+				href: "/favicon.ico?v=2",
 				type: "image/x-icon"
 			},
 			{
 				rel: "apple-touch-icon",
-				href: "/favicon.png"
+				href: "/favicon.png?v=2"
 			}
 		]
 	}),
@@ -146,7 +146,7 @@ function RootComponent() {
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {})
 	});
 }
-var $$splitComponentImporter = () => import("./routes-CPRLn4WC.mjs");
+var $$splitComponentImporter = () => import("./routes-ylgzyxfs.mjs");
 var title = "Pro Athletic — Premium Gym & Performance Center";
 var description = "Train with elite coaches, world-class equipment and 24/7 access at Pro Athletic. Memberships from ₹999/month. Book a free trial today.";
 var rootRouteChildren = { IndexRoute: createFileRoute("/")({

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import logoPag from "@/assets/Logo_PAG.jpeg";
 
 const links = [
   ["Home", "#home"],
@@ -33,8 +34,15 @@ export function Navbar() {
         aria-label="Main"
         className="mx-auto flex max-w-7xl items-center justify-between px-5 lg:px-8"
       >
-        <a href="#home" className="display text-2xl tracking-widest">
-          PRO<span className="text-primary">ATHLETIC</span>
+        <a href="#home" className="flex items-center gap-2.5 display text-2xl tracking-widest">
+          <img
+            src={logoPag}
+            alt="Pro Athletic Gyms Logo"
+            className="h-9 w-9 shrink-0 rounded-full object-cover"
+          />
+          <span>
+            PRO<span className="text-primary">ATHLETIC</span>
+          </span>
         </a>
 
         <ul className="hidden items-center gap-7 xl:flex">

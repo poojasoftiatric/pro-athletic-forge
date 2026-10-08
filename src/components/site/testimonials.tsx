@@ -1,8 +1,77 @@
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, ExternalLink, Star } from "lucide-react";
 import { SectionHeading } from "./why-us";
 
+const GOOGLE_REVIEWS_URL =
+  "https://www.google.com/search?sca_esv=e2130cf16db8d2a2&sxsrf=APpeQntzi5jLFHDqa4IWnNN5PKpXGsC_xw:1791453936095&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_8zkAoHjfzahqKW6hAfkAOgt5LDl5F_hb9GPlQSg7Whgxk7Z_9lYKiZSA5mfT2KzBkC5u52ZalmB3ISS2W3o4xcf8kWEPtjw7FrmywLO_XcYSrQY-Q%3D%3D&q=Pro+Athletic+Gyms+VIP+Road+Reviews&sa=X&ved=2ahUKEwiu4Pf7laqXAxX-yzgGHf0ZIqkQ0bkNegQILBAF&biw=1280&bih=585&dpr=1.5";
+
 const reviews = [
+  {
+    name: "Param",
+    rating: 5,
+    time: "3 months ago",
+    text: "The gym has a very positive aura and all the equipment are well maintained, also the staff is very cooperative and the gym trainer Mr. Rohit is also very helpful.",
+  },
+  {
+    name: "Jatin Kumar",
+    rating: 5,
+    time: "a year ago",
+    text: "There’s a good variety of machines and free weights, and I never have to wait long to use anything. The group classes are also a great bonus—motivating and well-led by professional trainers. Overall, it’s a great place to stay fit and healthy. I would definitely recommend it to anyone looking for a quality gym!",
+  },
+  {
+    name: "Ajay Kumar",
+    rating: 5,
+    time: "7 months ago",
+    text: "Best gym of Zirakpur... Me and my wife are working out here from 3 years and we got amazing results. They have so many machines of each muscle group, ambience is so nice and prices are affordable for everyone.",
+  },
+  {
+    name: "Shubham Gauhar",
+    rating: 5,
+    time: "9 months ago",
+    text: "Love this gym and ambience here! Having the best experience with the support of Kishan here. Suggest you to must visit.",
+  },
+  {
+    name: "Shailendra Jain",
+    rating: 5,
+    time: "8 months ago",
+    text: "It was an excellent experience. All equipment are well maintained, machines are working properly, and very hygienic.",
+  },
+  {
+    name: "Hemant Kumar",
+    rating: 5,
+    time: "10 months ago",
+    text: "This is the best gym in Zirakpur, the equipment is top brand and better is the gym trainer here. I'm feeling great. Thanks!",
+  },
+  {
+    name: "Bhavna Notyal",
+    rating: 5,
+    time: "7 months ago",
+    text: "Well equipped gym, good atmosphere and the staff is good. Trainer Kishan is very polite and gives the best guidance.",
+  },
+  {
+    name: "Saksham Sharma",
+    rating: 5,
+    time: "a year ago",
+    text: "Best gym in this area! Very good equipment and well maintained. One of the best hours of my day is spent there.",
+  },
+  {
+    name: "Parvaiz Sajad",
+    rating: 5,
+    time: "9 months ago",
+    text: "Pro Athletic Gyms is the best gym having a clean, motivating environment with good equipment, and trainer Rohit is knowledgeable, supportive, and ensures proper guidance throughout workouts.",
+  },
+  {
+    name: "Vishal Kumar",
+    rating: 5,
+    time: "7 months ago",
+    text: "Best gym for athletes... as they have heavy duty equipment. I feel motivated and the training staff is very helpful. Even without personal training, they treat you very well.",
+  },
+  {
+    name: "Ajit Singh",
+    rating: 5,
+    time: "9 months ago",
+    text: "Good gym, very nice environment, and best trainer Kishan Singh fully cooperates.",
+  },
   {
     name: "Shivali Verma",
     rating: 5,
@@ -88,8 +157,8 @@ export function Testimonials() {
             className="flex transition-transform duration-700 ease-out"
             style={{ transform: `translateX(-${index * 100}%)` }}
           >
-            {reviews.map((r) => (
-              <figure key={r.name} className="w-full shrink-0 px-2">
+            {reviews.map((r, i) => (
+              <figure key={`${r.name}-${i}`} className="w-full shrink-0 px-2">
                 <div className="mx-auto max-w-2xl rounded-3xl glass p-6 sm:p-8 text-center">
                   <div className="flex flex-wrap items-center justify-center gap-3">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full text-base font-bold text-white shadow-md ring-2 ring-primary/60 bg-gradient-to-br from-primary to-primary/70">
@@ -136,10 +205,10 @@ export function Testimonials() {
           >
             <ChevronLeft size={16} />
           </button>
-          <div className="flex gap-2">
+          <div className="flex max-w-md flex-wrap items-center justify-center gap-1.5">
             {reviews.map((r, i) => (
               <button
-                key={r.name}
+                key={`${r.name}-${i}`}
                 type="button"
                 aria-label={`Go to testimonial ${i + 1}`}
                 onClick={() => setIndex(i)}
@@ -157,6 +226,22 @@ export function Testimonials() {
           >
             <ChevronRight size={16} />
           </button>
+        </div>
+
+        <div className="mt-8 flex justify-center">
+          <a
+            href={GOOGLE_REVIEWS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2.5 rounded-full border border-glass-border glass px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:border-primary/60 hover:text-primary hover:glow-red"
+          >
+            <GoogleIcon />
+            <span>See More Google Reviews</span>
+            <ExternalLink
+              size={15}
+              className="text-muted-foreground transition-transform duration-300 group-hover:translate-x-0.5 group-hover:text-primary"
+            />
+          </a>
         </div>
       </div>
     </section>

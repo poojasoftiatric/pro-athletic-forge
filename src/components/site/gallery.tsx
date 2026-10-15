@@ -21,9 +21,9 @@ export function Gallery() {
     <section id="gallery" className="relative py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
-          eyebrow="Gallery"
-          title="INSIDE THE FLOOR"
-          subtitle="Every zone engineered for focused, uninterrupted training."
+          eyebrow="Gym Gallery"
+          title="INSIDE THE PRO ATHLETIC FLOOR"
+          subtitle="Explore our specialized workout zones, Olympic weightlifting racks, cardio arenas, and recovery suites on VIP Road, Zirakpur."
         />
         <div className="mt-8 columns-1 gap-5 sm:columns-2 lg:mt-10 lg:columns-3 [&>*]:mb-5">
           {shots.map((s, i) => (
@@ -31,7 +31,7 @@ export function Gallery() {
               <figure className="group relative overflow-hidden rounded-3xl glass break-inside-avoid">
                 <img
                   src={s.img}
-                  alt={`${s.label} at Pro Athletic`}
+                  alt={`${s.label} zone and equipment at Pro Athletic Gym Zirakpur`}
                   loading="lazy"
                   width={s.w}
                   height={s.h}

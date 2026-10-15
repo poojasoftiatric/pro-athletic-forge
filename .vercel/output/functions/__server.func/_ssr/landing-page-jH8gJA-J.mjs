@@ -1,21 +1,57 @@
 import { r as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
-import { A as Activity, C as CupSoda, D as Check, E as ChevronLeft, O as Car, S as Droplets, T as ChevronRight, _ as Instagram, a as Twitter, b as ExternalLink, c as Snowflake, d as Phone, f as Menu, g as LockKeyhole, h as Lock, i as Waves, k as ArrowUpRight, l as ShieldCheck, m as Mail, n as X, o as Star, p as MapPin, r as Wifi, s as Sparkles, t as Youtube, u as Salad, v as Flame, w as Clock, x as Dumbbell, y as Facebook } from "../_libs/lucide-react.mjs";
+import { A as ArrowUpRight, C as Droplets, D as ChevronLeft, E as ChevronRight, O as Check, S as Dumbbell, T as Clock, _ as LockKeyhole, a as Twitter, b as Facebook, c as Snowflake, d as Plus, f as Phone, g as Lock, h as Mail, i as Waves, j as Activity, k as Car, l as ShieldCheck, m as MapPin, n as X, o as Star, p as Menu, r as Wifi, s as Sparkles, t as Youtube, u as Salad, v as Instagram, w as CupSoda, x as ExternalLink, y as Flame } from "../_libs/lucide-react.mjs";
 import { t as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-ylgzyxfs.js
+//#region node_modules/.nitro/vite/services/ssr/assets/landing-page-jH8gJA-J.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Logo_PAG_default = "/assets/Logo_PAG-DxjghSFF.jpeg";
+function getSectionIdFromPath(pathname) {
+	const clean = pathname.replace(/^\/+|\/+$/g, "").toLowerCase();
+	if (!clean || clean === "home") return "home";
+	return clean;
+}
+function scrollToSection(sectionId, smooth = true) {
+	if (typeof window === "undefined") return false;
+	const el = document.getElementById(sectionId);
+	if (!el) return false;
+	const offsetPosition = el.getBoundingClientRect().top + window.pageYOffset - 70;
+	window.scrollTo({
+		top: Math.max(0, offsetPosition),
+		behavior: smooth ? "smooth" : "auto"
+	});
+	return true;
+}
+function handleNavClick(path, e) {
+	if (e) {
+		if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+		e.preventDefault();
+	}
+	const sectionId = getSectionIdFromPath(path);
+	const targetPath = path.startsWith("/") ? path : `/${path}`;
+	if (typeof window !== "undefined") {
+		if (window.location.pathname !== targetPath) window.history.pushState(null, "", targetPath);
+		scrollToSection(sectionId, true);
+	}
+}
+function initPopStateListener() {
+	if (typeof window === "undefined") return () => {};
+	const handlePopState = () => {
+		scrollToSection(getSectionIdFromPath(window.location.pathname), true);
+	};
+	window.addEventListener("popstate", handlePopState);
+	return () => window.removeEventListener("popstate", handlePopState);
+}
 var links = [
-	["Home", "#home"],
-	["About", "#about"],
-	["Programs", "#programs"],
-	["Membership", "#membership"],
-	["Trainers", "#trainers"],
-	["Testimonials", "#testimonials"],
-	["Gallery", "#gallery"],
-	["Contact", "#contact"]
+	["Home", "/home"],
+	["About", "/about"],
+	["Programs", "/programs"],
+	["Membership", "/membership"],
+	["Trainers", "/trainers"],
+	["Testimonials", "/testimonials"],
+	["Gallery", "/gallery"],
+	["Contact", "/contact"]
 ];
 function Navbar() {
 	const [scrolled, setScrolled] = (0, import_react.useState)(false);
@@ -33,7 +69,8 @@ function Navbar() {
 			className: "mx-auto flex max-w-7xl items-center justify-between px-5 lg:px-8",
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-					href: "#home",
+					href: "/home",
+					onClick: (e) => handleNavClick("/home", e),
 					className: "flex items-center gap-2.5 display text-2xl tracking-widest",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 						src: Logo_PAG_default,
@@ -48,6 +85,7 @@ function Navbar() {
 					className: "hidden items-center gap-7 xl:flex",
 					children: links.map(([label, href]) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 						href,
+						onClick: (e) => handleNavClick(href, e),
 						className: "relative text-sm font-medium text-muted-foreground transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:text-foreground hover:after:origin-bottom-left hover:after:scale-x-100",
 						children: label
 					}) }, label))
@@ -55,7 +93,8 @@ function Navbar() {
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "flex items-center gap-3",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-						href: "#membership",
+						href: "/membership",
+						onClick: (e) => handleNavClick("/membership", e),
 						className: "hidden rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:glow-red hover:brightness-110 sm:inline-flex",
 						children: "Join Now"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
@@ -74,7 +113,10 @@ function Navbar() {
 				className: "grid gap-1",
 				children: links.map(([label, href]) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 					href,
-					onClick: () => setOpen(false),
+					onClick: (e) => {
+						setOpen(false);
+						handleNavClick(href, e);
+					},
 					className: "block rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-secondary hover:text-foreground",
 					children: label
 				}) }, label))
@@ -163,7 +205,7 @@ function Hero() {
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 				src: hero_default,
-				alt: "Athlete performing a heavy barbell deadlift at Pro Athletic",
+				alt: "Athlete deadlifting heavy barbell weights at Pro Athletic Gym on VIP Road Zirakpur",
 				width: 1920,
 				height: 1280,
 				fetchPriority: "high",
@@ -200,6 +242,10 @@ function Hero() {
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 									className: "bg-gradient-to-r from-primary to-foreground bg-clip-text text-transparent",
 									children: "STRONGEST SELF"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "sr-only",
+									children: " — Premier Gym & Fitness Center in Zirakpur, Punjab"
 								})
 							]
 						})
@@ -209,7 +255,7 @@ function Hero() {
 						delay: 200,
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 							className: "mt-6 max-w-xl text-base text-muted-foreground sm:text-lg",
-							children: "Train with elite coaches, world-class equipment, and a community built for champions."
+							children: "Train at Zirakpur's premier fitness center on VIP Road. 7+ certified coaches, 18-hour facility access, Olympic strength equipment, and a community built for champions."
 						})
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
@@ -218,12 +264,14 @@ function Hero() {
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "mt-9 flex flex-wrap gap-4",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-								href: "#contact",
+								href: "/contact",
+								onClick: (e) => handleNavClick("/contact", e),
 								className: "rounded-full px-8 py-4 text-sm font-bold tracking-wide uppercase text-primary-foreground transition-all duration-300 hover:glow-red hover:-translate-y-0.5",
 								style: { background: "var(--gradient-red)" },
 								children: "Start Today"
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-								href: "#membership",
+								href: "/membership",
+								onClick: (e) => handleNavClick("/membership", e),
 								className: "rounded-full glass px-8 py-4 text-sm font-bold tracking-wide uppercase transition-all duration-300 hover:-translate-y-0.5 hover:border-primary",
 								children: "View Membership"
 							})]
@@ -292,23 +340,23 @@ function SectionHeading({ eyebrow, title, subtitle, align = "center" }) {
 var features = [
 	{
 		icon: Dumbbell,
-		title: "Elite Equipment",
-		text: "Rogue racks, calibrated plates and performance machines maintained daily."
+		title: "World-Class Equipment",
+		text: "Rogue racks, calibrated Olympic plates, selectorized machines, and turf maintained daily."
 	},
 	{
 		icon: ShieldCheck,
-		title: "Certified Trainers",
-		text: "Coaches with national certifications and competitive athletic backgrounds."
+		title: "7+ Certified Trainers",
+		text: "Nationally accredited coaches specializing in Strength, CrossFit, Yoga, and Fat Loss."
 	},
 	{
 		icon: Salad,
-		title: "Nutrition Guidance",
-		text: "Macro plans built around your body composition goals and daily routine."
+		title: "Custom Nutrition Plans",
+		text: "Macro-calculated diet plans built around your body composition goals and lifestyle."
 	},
 	{
 		icon: Flame,
 		title: "Personalized Training",
-		text: "Programming that adapts every block based on your measured progress."
+		text: "Progressive workout programming designed for beginners to competitive athletes."
 	}
 ];
 function WhyUs() {
@@ -320,7 +368,7 @@ function WhyUs() {
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
 				eyebrow: "Why Pro Athletic",
 				title: "BUILT FOR CHAMPIONS",
-				subtitle: "Everything under one roof so nothing stands between you and your next personal record."
+				subtitle: "Everything under one roof on VIP Road so nothing stands between you and your next personal record."
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "mt-8 grid gap-6 sm:grid-cols-2 lg:mt-10 lg:grid-cols-4",
 				children: features.map((f, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
@@ -397,9 +445,9 @@ function Membership() {
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-7xl px-5 lg:px-8",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
-				eyebrow: "Membership",
-				title: "CHOOSE YOUR LEVEL",
-				subtitle: "No hidden fees. Cancel anytime. Every plan includes a free onboarding session."
+				eyebrow: "Membership Pricing",
+				title: "MEMBERSHIP PLANS & PRICING",
+				subtitle: "Transparent gym packages with flexible 3, 6, and 12-month memberships in Zirakpur. Every plan includes a free personal onboarding session."
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "mt-8 grid items-stretch gap-6 lg:mt-10 lg:grid-cols-3",
 				children: plans.map((plan, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
@@ -442,7 +490,8 @@ function Membership() {
 								}, f))
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-								href: "#contact",
+								href: "/contact",
+								onClick: (e) => handleNavClick("/contact", e),
 								className: `mt-8 block w-full rounded-full py-3.5 text-center text-sm font-bold tracking-wide uppercase transition-all duration-300 hover:-translate-y-0.5 ${plan.highlight ? "text-primary-foreground hover:glow-red" : "border border-glass-border hover:border-primary"}`,
 								style: plan.highlight ? { background: "var(--gradient-red)" } : void 0,
 								children: plan.cta
@@ -461,47 +510,47 @@ var prog_crossfit_default = "/assets/prog-crossfit-BKpXFQWx.jpg";
 var programs$1 = [
 	{
 		title: "Strength Training",
-		desc: "Progressive barbell blocks for raw power.",
+		desc: "Progressive barbell strength training with power racks and Olympic barbells.",
 		img: prog_strength_default
 	},
 	{
 		title: "Weight Loss",
-		desc: "Conditioning and nutrition to shred fat fast.",
+		desc: "High-burn metabolic conditioning and nutritional guidance for sustainable fat loss.",
 		img: prog_cardio_default
 	},
 	{
 		title: "Functional Fitness",
-		desc: "Move better with sled, rope and kettlebell work.",
+		desc: "Athletic agility, sled pushes, battle ropes, and kettlebell conditioning on turf.",
 		img: prog_functional_default
 	},
 	{
 		title: "CrossFit",
-		desc: "High-intensity WODs coached in small groups.",
+		desc: "High-intensity WODs coached in small, motivating groups by certified trainers.",
 		img: prog_crossfit_default
 	},
 	{
 		title: "Bodybuilding",
-		desc: "Hypertrophy programming for stage-ready shape.",
+		desc: "Targeted hypertrophy workouts and symmetry coaching for stage or personal goals.",
 		img: "/assets/prog-bodybuilding-kFPgB8oh.jpg"
 	},
 	{
 		title: "Cardio",
-		desc: "Zone-based endurance on premium machines.",
+		desc: "Zone 2 and VO2 max endurance workouts on premium treadmills, bikes, and rowers.",
 		img: prog_cardio_default
 	},
 	{
 		title: "HIIT",
-		desc: "45-minute intervals that torch calories.",
+		desc: "Fast-paced 45-minute interval circuits that maximize calorie burn and endurance.",
 		img: prog_crossfit_default
 	},
 	{
-		title: "Yoga",
-		desc: "Mobility, breath and recovery-focused flows.",
+		title: "Yoga & Mobility",
+		desc: "Joint mobility, deep stretching, mindful breathing, and athletic recovery flows.",
 		img: "/assets/prog-yoga-HvQ7yFFI.jpg"
 	},
 	{
 		title: "Powerlifting",
-		desc: "Squat, bench and deadlift meet preparation.",
+		desc: "Squat, bench press, and deadlift technique coaching for power and PRs.",
 		img: prog_strength_default
 	}
 ];
@@ -512,9 +561,9 @@ function Programs() {
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-7xl px-5 lg:px-8",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
-				eyebrow: "Programs",
+				eyebrow: "Training Programs",
 				title: "TRAIN YOUR WAY",
-				subtitle: "Nine coached disciplines, one membership. Switch whenever your goals change."
+				subtitle: "Nine expert-coached fitness disciplines, all under one membership on VIP Road. Switch anytime."
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "mt-8 grid gap-6 sm:grid-cols-2 lg:mt-10 lg:grid-cols-3",
 				children: programs$1.map((p, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
@@ -526,7 +575,7 @@ function Programs() {
 							className: "relative aspect-[4/3] overflow-hidden",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 								src: p.img,
-								alt: `${p.title} at Pro Athletic`,
+								alt: `${p.title} session at Pro Athletic Gym Zirakpur`,
 								loading: "lazy",
 								width: 800,
 								height: 600,
@@ -544,7 +593,8 @@ function Programs() {
 									children: p.desc
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-									href: "#contact",
+									href: "/contact",
+									onClick: (e) => handleNavClick("/contact", e),
 									className: "mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-transform duration-300 group-hover:translate-x-1",
 									children: ["Learn More ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { size: 16 })]
 								})
@@ -607,9 +657,9 @@ function Trainers() {
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-7xl px-5 lg:px-8",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
-				eyebrow: "Trainers",
-				title: "COACHED BY THE BEST",
-				subtitle: "Every coach on the floor competes, studies and programs at a professional level."
+				eyebrow: "Certified Trainers",
+				title: "CERTIFIED PERSONAL TRAINERS",
+				subtitle: "Train with 7+ nationally accredited fitness coaches specializing in strength, body transformations, functional movement, and yoga."
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "mt-8 flex flex-wrap justify-center gap-6 lg:mt-10",
 				children: trainers.map((t, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
@@ -623,7 +673,7 @@ function Trainers() {
 							children: [
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 									src: t.img,
-									alt: `${t.name}, ${t.spec} coach`,
+									alt: `${t.name} - ${t.spec} at Pro Athletic Gym Zirakpur (${t.exp} experience)`,
 									loading: "lazy",
 									width: 700,
 									height: 900,
@@ -637,7 +687,8 @@ function Trainers() {
 										Twitter,
 										Youtube
 									].map((Icon, n) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-										href: "#trainers",
+										href: "/trainers",
+										onClick: (e) => handleNavClick("/trainers", e),
 										"aria-label": `${t.name} social profile`,
 										className: "rounded-full glass p-2.5 hover:text-primary",
 										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { size: 16 })
@@ -826,6 +877,30 @@ var results = [
 ];
 function Transformations() {
 	const [pos, setPos] = (0, import_react.useState)(50);
+	const [isDragging, setIsDragging] = (0, import_react.useState)(false);
+	const containerRef = (0, import_react.useRef)(null);
+	const updatePosition = (clientX) => {
+		if (!containerRef.current) return;
+		const rect = containerRef.current.getBoundingClientRect();
+		const x = clientX - rect.left;
+		const percentage = Math.max(2, Math.min(98, x / rect.width * 100));
+		setPos(Math.round(percentage * 10) / 10);
+	};
+	const handlePointerDown = (e) => {
+		setIsDragging(true);
+		e.currentTarget.setPointerCapture(e.pointerId);
+		updatePosition(e.clientX);
+	};
+	const handlePointerMove = (e) => {
+		if (!isDragging) return;
+		updatePosition(e.clientX);
+	};
+	const handlePointerUp = (e) => {
+		setIsDragging(false);
+		try {
+			e.currentTarget.releasePointerCapture(e.pointerId);
+		} catch {}
+	};
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
 		className: "relative py-8 lg:py-10",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -833,7 +908,7 @@ function Transformations() {
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
 				eyebrow: "Transformations",
 				title: "REAL RESULTS",
-				subtitle: "Drag the slider to see what disciplined coaching looks like."
+				subtitle: "Drag the slider or circle to see what disciplined coaching looks like."
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "mt-8 grid gap-10 lg:mt-10 lg:grid-cols-[1.1fr_1fr] lg:items-center",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
@@ -842,26 +917,33 @@ function Transformations() {
 						className: "relative overflow-hidden rounded-[2rem] glass",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "relative aspect-[4/5] sm:aspect-[4/3]",
+								ref: containerRef,
+								onPointerDown: handlePointerDown,
+								onPointerMove: handlePointerMove,
+								onPointerUp: handlePointerUp,
+								onPointerCancel: handlePointerUp,
+								className: `relative aspect-[4/5] sm:aspect-[4/3] select-none touch-none overflow-hidden ${isDragging ? "cursor-grabbing" : "cursor-ew-resize"}`,
 								children: [
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 										src: after_1_default,
 										alt: "Member after their Pro Athletic transformation",
 										loading: "lazy",
+										draggable: false,
 										width: 800,
 										height: 1e3,
-										className: "absolute inset-0 h-full w-full object-cover object-center"
+										className: "pointer-events-none absolute inset-0 h-full w-full object-cover object-center select-none"
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "absolute inset-0 overflow-hidden",
+										className: "pointer-events-none absolute inset-0 overflow-hidden select-none",
 										style: { width: `${pos}%` },
 										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 											src: before_1_default,
 											alt: "Member before their Pro Athletic transformation",
 											loading: "lazy",
+											draggable: false,
 											width: 800,
 											height: 1e3,
-											className: "h-full w-full object-cover object-center",
+											className: "pointer-events-none h-full w-full object-cover object-center select-none",
 											style: {
 												width: `${100 / pos * 100}%`,
 												maxWidth: "none"
@@ -869,19 +951,32 @@ function Transformations() {
 										})
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "pointer-events-none absolute inset-y-0 w-0.5 bg-primary",
+										className: "pointer-events-none absolute inset-y-0 w-1 -translate-x-1/2 bg-primary shadow-glow z-10",
 										style: { left: `${pos}%` },
-										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-											className: "absolute top-1/2 left-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground",
-											children: "↔"
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+											role: "slider",
+											"aria-label": "Before and after comparison slider",
+											"aria-valuenow": Math.round(pos),
+											"aria-valuemin": 2,
+											"aria-valuemax": 98,
+											tabIndex: 0,
+											onKeyDown: (e) => {
+												if (e.key === "ArrowLeft") setPos((p) => Math.max(2, p - 3));
+												if (e.key === "ArrowRight") setPos((p) => Math.min(98, p + 3));
+											},
+											className: `pointer-events-auto absolute top-1/2 left-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground shadow-lg transition-transform ring-4 ring-background/70 ${isDragging ? "scale-115 cursor-grabbing" : "hover:scale-110 active:scale-95 cursor-grab"}`,
+											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+												className: "select-none tracking-tighter",
+												children: "↔"
+											})
 										})
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "absolute top-4 left-4 rounded-full glass px-3 py-1 text-[11px] font-bold tracking-widest uppercase",
+										className: "pointer-events-none absolute top-4 left-4 rounded-full glass px-3 py-1 text-[11px] font-bold tracking-widest uppercase select-none",
 										children: "Before"
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "absolute top-4 right-4 rounded-full glass px-3 py-1 text-[11px] font-bold tracking-widest uppercase",
+										className: "pointer-events-none absolute top-4 right-4 rounded-full glass px-3 py-1 text-[11px] font-bold tracking-widest uppercase select-none",
 										children: "After"
 									})
 								]
@@ -898,7 +993,7 @@ function Transformations() {
 								max: 98,
 								value: pos,
 								onChange: (e) => setPos(Number(e.target.value)),
-								className: "w-full accent-[oklch(0.556_0.245_28.5)] p-5"
+								className: "w-full accent-[oklch(0.556_0.245_28.5)] p-5 cursor-pointer"
 							})
 						]
 					})
@@ -1069,9 +1164,9 @@ function Testimonials() {
 			className: "mx-auto max-w-7xl px-5 lg:px-8",
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
-					eyebrow: "Testimonials",
-					title: "MEMBER VOICES",
-					subtitle: "Real reviews from our Google verified members."
+					eyebrow: "Member Reviews",
+					title: "MEMBER REVIEWS & SUCCESS STORIES",
+					subtitle: "Rated 5/5 stars on Google by 80+ real fitness athletes training at Pro Athletic in Zirakpur."
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 					className: "mt-8 overflow-hidden lg:mt-10",
@@ -1224,9 +1319,9 @@ function Gallery() {
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-7xl px-5 lg:px-8",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
-				eyebrow: "Gallery",
-				title: "INSIDE THE FLOOR",
-				subtitle: "Every zone engineered for focused, uninterrupted training."
+				eyebrow: "Gym Gallery",
+				title: "INSIDE THE PRO ATHLETIC FLOOR",
+				subtitle: "Explore our specialized workout zones, Olympic weightlifting racks, cardio arenas, and recovery suites on VIP Road, Zirakpur."
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "mt-8 columns-1 gap-5 sm:columns-2 lg:mt-10 lg:columns-3 [&>*]:mb-5",
 				children: shots.map((s, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
@@ -1236,7 +1331,7 @@ function Gallery() {
 						className: "group relative overflow-hidden rounded-3xl glass break-inside-avoid",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: s.img,
-							alt: `${s.label} at Pro Athletic`,
+							alt: `${s.label} zone and equipment at Pro Athletic Gym Zirakpur`,
 							loading: "lazy",
 							width: s.w,
 							height: s.h,
@@ -1299,9 +1394,9 @@ function Facilities() {
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-7xl px-5 lg:px-8",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
-				eyebrow: "Facilities",
-				title: "EVERY DETAIL COVERED",
-				subtitle: "Amenities that make training the easiest part of your day."
+				eyebrow: "Facilities & Amenities",
+				title: "LUXURY GYM AMENITIES",
+				subtitle: "Steam bath, private lockers, free parking, AC workout floors, and recovery zones — every detail built for comfort and performance on VIP Road."
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-10 lg:grid-cols-5",
 				children: facilities.map((f, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
@@ -1398,9 +1493,9 @@ function Contact() {
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-7xl px-5 lg:px-8",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
-				eyebrow: "Contact",
-				title: "BOOK A FREE TRIAL",
-				subtitle: "One session on us. Bring your goals, we'll bring the plan."
+				eyebrow: "Contact & Free Pass",
+				title: "VISIT US & BOOK A FREE TRIAL",
+				subtitle: "Claim your complimentary workout session at Hollywood Plaza, VIP Road, Zirakpur. Speak with our certified coaches today."
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "mt-8 grid gap-6 lg:mt-10 lg:grid-cols-2",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
@@ -1591,7 +1686,8 @@ function Footer() {
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-						href: "#home",
+						href: "/home",
+						onClick: (e) => handleNavClick("/home", e),
 						className: "flex items-center gap-2.5 display text-2xl tracking-widest",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: Logo_PAG_default,
@@ -1604,7 +1700,7 @@ function Footer() {
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "mt-4 text-sm text-muted-foreground",
-						children: "A premium athletic performance center built for people who take training seriously."
+						children: "Punjab's premier athletic gym and performance center at Hollywood Plaza, SCO 9-10, VIP Road, Zirakpur. Open 7 days a week, 6 AM – 11 PM."
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						className: "mt-5 flex gap-3",
@@ -1647,7 +1743,8 @@ function Footer() {
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
 						className: "mt-4 space-y-2.5",
 						children: quick.map((l) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-							href: `#${l.toLowerCase()}`,
+							href: `/${l.toLowerCase()}`,
+							onClick: (e) => handleNavClick(`/${l.toLowerCase()}`, e),
 							className: "text-sm text-muted-foreground transition hover:text-primary",
 							children: l
 						}) }, l))
@@ -1661,7 +1758,8 @@ function Footer() {
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
 						className: "mt-4 space-y-2.5",
 						children: programs.map((p) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-							href: "#programs",
+							href: "/programs",
+							onClick: (e) => handleNavClick("/programs", e),
 							className: "text-sm text-muted-foreground transition hover:text-primary",
 							children: p
 						}) }, p))
@@ -1734,7 +1832,100 @@ function Footer() {
 		})]
 	});
 }
-function Index() {
+var faqs = [
+	{
+		q: "What are Pro Athletic's operating hours?",
+		a: "Pro Athletic is staffed from 6 AM to 11 PM, 7 days a week — including public holidays. Members on Elite or 24/7 access plans can use the facility at any hour with their access card."
+	},
+	{
+		q: "Where is Pro Athletic located?",
+		a: "We are located at Hollywood Plaza, SCO 9-10, VIP Road, Zirakpur, Punjab 140603 — easily accessible from Chandigarh, Panchkula, and Mohali."
+	},
+	{
+		q: "How much does a gym membership cost?",
+		a: "Memberships start at ₹5,000 for 3 months (Starter), ₹7,500 for 6 months (Premium), and ₹10,000 for 12 months (Elite). Every plan includes a free onboarding session with a certified trainer. There are no hidden fees."
+	},
+	{
+		q: "Does Pro Athletic offer personal training?",
+		a: "Yes! We have 7+ certified personal trainers specialising in Strength Training, CrossFit, Yoga, Bodybuilding, and Weight Loss. Personal training is included in Premium and Elite membership plans, and can be added to any plan."
+	},
+	{
+		q: "Can I try the gym before joining?",
+		a: "Absolutely. We offer a completely free trial session with no commitment required. Book through the contact form on this page or call us directly at +91-98200-44120."
+	},
+	{
+		q: "What programs does Pro Athletic offer?",
+		a: "We offer 9 coached disciplines under one membership: Strength Training, Weight Loss, Functional Fitness, CrossFit, Bodybuilding, Cardio, HIIT, Yoga, and Powerlifting. You can switch between programs as your goals evolve."
+	}
+];
+function Faq() {
+	const [open, setOpen] = (0, import_react.useState)(null);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+		id: "faq",
+		className: "relative py-8 lg:py-10",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "mx-auto max-w-4xl px-5 lg:px-8",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
+				eyebrow: "Common Questions",
+				title: "FREQUENTLY ASKED QUESTIONS",
+				subtitle: "Everything you need to know about gym timings, membership fees, certified trainers, and free trial passes in Zirakpur."
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("dl", {
+				className: "mt-8 space-y-3 lg:mt-10",
+				children: faqs.map((faq, i) => {
+					const isOpen = open === i;
+					return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+						direction: "up",
+						delay: i * 60,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: `overflow-hidden rounded-2xl glass transition-all duration-300 ${isOpen ? "border-primary/50" : ""}`,
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("dt", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+								id: `faq-btn-${i}`,
+								type: "button",
+								"aria-expanded": isOpen,
+								"aria-controls": `faq-panel-${i}`,
+								onClick: () => setOpen(isOpen ? null : i),
+								className: "flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-semibold tracking-wide transition-colors hover:text-primary",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: faq.q }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: `flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${isOpen ? "rotate-45 bg-primary text-primary-foreground" : "border border-glass-border text-muted-foreground"}`,
+									"aria-hidden": "true",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Plus, { size: 14 })
+								})]
+							}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("dd", {
+								id: `faq-panel-${i}`,
+								role: "region",
+								"aria-labelledby": `faq-btn-${i}`,
+								className: `grid transition-all duration-300 ease-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`,
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "overflow-hidden",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "px-6 pb-5 text-sm leading-relaxed text-muted-foreground",
+										children: faq.a
+									})
+								})
+							})]
+						})
+					}, faq.q);
+				})
+			})]
+		})
+	});
+}
+function LandingPage({ initialSection }) {
+	const hasScrolledRef = (0, import_react.useRef)(false);
+	(0, import_react.useEffect)(() => {
+		const cleanup = initPopStateListener();
+		if (!hasScrolledRef.current && initialSection && initialSection !== "home") {
+			hasScrolledRef.current = true;
+			const timer = setTimeout(() => {
+				scrollToSection(initialSection, true);
+			}, 150);
+			return () => {
+				clearTimeout(timer);
+				cleanup();
+			};
+		}
+		return cleanup;
+	}, [initialSection]);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		className: "min-h-screen bg-background",
 		children: [
@@ -1750,6 +1941,7 @@ function Index() {
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Testimonials, {}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Gallery, {}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Facilities, {}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Faq, {}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Contact, {})
 			] }),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Footer, {})
@@ -1757,4 +1949,4 @@ function Index() {
 	});
 }
 //#endregion
-export { Index as component };
+export { LandingPage as t };

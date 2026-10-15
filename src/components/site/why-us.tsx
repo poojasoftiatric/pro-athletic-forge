@@ -26,23 +26,23 @@ export function SectionHeading({
 const features = [
   {
     icon: Dumbbell,
-    title: "Elite Equipment",
-    text: "Rogue racks, calibrated plates and performance machines maintained daily.",
+    title: "World-Class Equipment",
+    text: "Rogue racks, calibrated Olympic plates, selectorized machines, and turf maintained daily.",
   },
   {
     icon: ShieldCheck,
-    title: "Certified Trainers",
-    text: "Coaches with national certifications and competitive athletic backgrounds.",
+    title: "7+ Certified Trainers",
+    text: "Nationally accredited coaches specializing in Strength, CrossFit, Yoga, and Fat Loss.",
   },
   {
     icon: Salad,
-    title: "Nutrition Guidance",
-    text: "Macro plans built around your body composition goals and daily routine.",
+    title: "Custom Nutrition Plans",
+    text: "Macro-calculated diet plans built around your body composition goals and lifestyle.",
   },
   {
     icon: Flame,
     title: "Personalized Training",
-    text: "Programming that adapts every block based on your measured progress.",
+    text: "Progressive workout programming designed for beginners to competitive athletes.",
   },
 ];
 
@@ -53,7 +53,7 @@ export function WhyUs() {
         <SectionHeading
           eyebrow="Why Pro Athletic"
           title="BUILT FOR CHAMPIONS"
-          subtitle="Everything under one roof so nothing stands between you and your next personal record."
+          subtitle="Everything under one roof on VIP Road so nothing stands between you and your next personal record."
         />
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:mt-10 lg:grid-cols-4">
           {features.map((f, i) => (

@@ -147,9 +147,9 @@ export function Testimonials() {
     <section id="testimonials" className="relative py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
-          eyebrow="Testimonials"
-          title="MEMBER VOICES"
-          subtitle="Real reviews from our Google verified members."
+          eyebrow="Member Reviews"
+          title="MEMBER REVIEWS & SUCCESS STORIES"
+          subtitle="Rated 5/5 stars on Google by 80+ real fitness athletes training at Pro Athletic in Zirakpur."
         />
 
         <div className="mt-8 overflow-hidden lg:mt-10">

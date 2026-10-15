@@ -1,6 +1,7 @@
 import { Star } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import { Counter, Reveal } from "./reveal";
+import { handleNavClick } from "@/lib/navigation";
 
 const stats = [
   { value: 4, suffix: "+ Years", label: "Running Successfully" },
@@ -13,7 +14,7 @@ export function Hero() {
     <section id="home" className="relative flex min-h-screen items-center overflow-hidden">
       <img
         src={heroImg}
-        alt="Athlete performing a heavy barbell deadlift at Pro Athletic"
+        alt="Athlete deadlifting heavy barbell weights at Pro Athletic Gym on VIP Road Zirakpur"
         width={1920}
         height={1280}
         fetchPriority="high"
@@ -48,26 +49,29 @@ export function Hero() {
             <span className="bg-gradient-to-r from-primary to-foreground bg-clip-text text-transparent">
               STRONGEST SELF
             </span>
+            <span className="sr-only"> — Premier Gym &amp; Fitness Center in Zirakpur, Punjab</span>
           </h1>
         </Reveal>
 
         <Reveal direction="up" delay={200}>
           <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
-            Train with elite coaches, world-class equipment, and a community built for champions.
+            Train at Zirakpur's premier fitness center on VIP Road. 7+ certified coaches, 18-hour facility access, Olympic strength equipment, and a community built for champions.
           </p>
         </Reveal>
 
         <Reveal direction="up" delay={300}>
           <div className="mt-9 flex flex-wrap gap-4">
             <a
-              href="#contact"
+              href="/contact"
+              onClick={(e) => handleNavClick("/contact", e)}
               className="rounded-full px-8 py-4 text-sm font-bold tracking-wide uppercase text-primary-foreground transition-all duration-300 hover:glow-red hover:-translate-y-0.5"
               style={{ background: "var(--gradient-red)" }}
             >
               Start Today
             </a>
             <a
-              href="#membership"
+              href="/membership"
+              onClick={(e) => handleNavClick("/membership", e)}
               className="rounded-full glass px-8 py-4 text-sm font-bold tracking-wide uppercase transition-all duration-300 hover:-translate-y-0.5 hover:border-primary"
             >
               View Membership

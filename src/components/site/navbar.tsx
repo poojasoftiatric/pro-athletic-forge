@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import logoPag from "@/assets/Logo_PAG.jpeg";
+import { handleNavClick } from "@/lib/navigation";
 
 const links = [
-  ["Home", "#home"],
-  ["About", "#about"],
-  ["Programs", "#programs"],
-  ["Membership", "#membership"],
-  ["Trainers", "#trainers"],
-  ["Testimonials", "#testimonials"],
-  ["Gallery", "#gallery"],
-  ["Contact", "#contact"],
+  ["Home", "/home"],
+  ["About", "/about"],
+  ["Programs", "/programs"],
+  ["Membership", "/membership"],
+  ["Trainers", "/trainers"],
+  ["Testimonials", "/testimonials"],
+  ["Gallery", "/gallery"],
+  ["Contact", "/contact"],
 ] as const;
 
 export function Navbar() {
@@ -34,7 +35,11 @@ export function Navbar() {
         aria-label="Main"
         className="mx-auto flex max-w-7xl items-center justify-between px-5 lg:px-8"
       >
-        <a href="#home" className="flex items-center gap-2.5 display text-2xl tracking-widest">
+        <a
+          href="/home"
+          onClick={(e) => handleNavClick("/home", e)}
+          className="flex items-center gap-2.5 display text-2xl tracking-widest"
+        >
           <img
             src={logoPag}
             alt="Pro Athletic Gyms Logo"
@@ -50,6 +55,7 @@ export function Navbar() {
             <li key={label}>
               <a
                 href={href}
+                onClick={(e) => handleNavClick(href, e)}
                 className="relative text-sm font-medium text-muted-foreground transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:text-foreground hover:after:origin-bottom-left hover:after:scale-x-100"
               >
                 {label}
@@ -60,7 +66,8 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <a
-            href="#membership"
+            href="/membership"
+            onClick={(e) => handleNavClick("/membership", e)}
             className="hidden rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:glow-red hover:brightness-110 sm:inline-flex"
           >
             Join Now
@@ -84,7 +91,10 @@ export function Navbar() {
               <li key={label}>
                 <a
                   href={href}
-                  onClick={() => setOpen(false)}
+                  onClick={(e) => {
+                    setOpen(false);
+                    handleNavClick(href, e);
+                  }}
                   className="block rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-secondary hover:text-foreground"
                 >
                   {label}

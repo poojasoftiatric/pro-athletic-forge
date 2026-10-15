@@ -450,6 +450,19 @@ var Phone = createLucideIcon("phone", [["path", {
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var Plus = createLucideIcon("plus", [["path", {
+	d: "M5 12h14",
+	key: "1ays0h"
+}], ["path", {
+	d: "M12 5v14",
+	key: "s699le"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var Salad = createLucideIcon("salad", [
 	["path", {
 		d: "M7 21h10",
@@ -658,4 +671,4 @@ var Youtube = createLucideIcon("youtube", [["path", {
 	key: "1jp15x"
 }]]);
 //#endregion
-export { Activity as A, CupSoda as C, Check as D, ChevronLeft as E, Car as O, Droplets as S, ChevronRight as T, Instagram as _, Twitter as a, ExternalLink as b, Snowflake as c, Phone as d, Menu as f, LockKeyhole as g, Lock as h, Waves as i, ArrowUpRight as k, ShieldCheck as l, Mail as m, X as n, Star as o, MapPin as p, Wifi as r, Sparkles as s, Youtube as t, Salad as u, Flame as v, Clock as w, Dumbbell as x, Facebook as y };
+export { ArrowUpRight as A, Droplets as C, ChevronLeft as D, ChevronRight as E, Check as O, Dumbbell as S, Clock as T, LockKeyhole as _, Twitter as a, Facebook as b, Snowflake as c, Plus as d, Phone as f, Lock as g, Mail as h, Waves as i, Activity as j, Car as k, ShieldCheck as l, MapPin as m, X as n, Star as o, Menu as p, Wifi as r, Sparkles as s, Youtube as t, Salad as u, Instagram as v, CupSoda as w, ExternalLink as x, Flame as y };

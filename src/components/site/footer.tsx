@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 import logoPag from "@/assets/Logo_PAG.jpeg";
+import { handleNavClick } from "@/lib/navigation";
 
 const quick = ["Home", "About", "Programs", "Membership", "Trainers", "Contact"];
 const programs = ["Strength Training", "Weight Loss", "CrossFit", "Bodybuilding", "Yoga"];
@@ -49,7 +50,11 @@ export function Footer() {
     <footer className="border-t border-glass-border bg-surface/60">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-8 lg:grid-cols-4 lg:px-8 lg:py-10">
         <div>
-          <a href="#home" className="flex items-center gap-2.5 display text-2xl tracking-widest">
+          <a
+            href="/home"
+            onClick={(e) => handleNavClick("/home", e)}
+            className="flex items-center gap-2.5 display text-2xl tracking-widest"
+          >
             <img
               src={logoPag}
               alt="Pro Athletic Gyms Logo"
@@ -60,7 +65,7 @@ export function Footer() {
             </span>
           </a>
           <p className="mt-4 text-sm text-muted-foreground">
-            A premium athletic performance center built for people who take training seriously.
+            Punjab's premier athletic gym and performance center at Hollywood Plaza, SCO 9-10, VIP Road, Zirakpur. Open 7 days a week, 6 AM – 11 PM.
           </p>
           <div className="mt-5 flex gap-3">
             {[
@@ -97,7 +102,8 @@ export function Footer() {
             {quick.map((l) => (
               <li key={l}>
                 <a
-                  href={`#${l.toLowerCase()}`}
+                  href={`/${l.toLowerCase()}`}
+                  onClick={(e) => handleNavClick(`/${l.toLowerCase()}`, e)}
                   className="text-sm text-muted-foreground transition hover:text-primary"
                 >
                   {l}
@@ -113,7 +119,8 @@ export function Footer() {
             {programs.map((p) => (
               <li key={p}>
                 <a
-                  href="#programs"
+                  href="/programs"
+                  onClick={(e) => handleNavClick("/programs", e)}
                   className="text-sm text-muted-foreground transition hover:text-primary"
                 >
                   {p}

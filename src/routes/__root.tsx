@@ -75,21 +75,36 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "author", content: "Pro Athletic" },
+      // Theme color for mobile browser chrome
+      { name: "theme-color", content: "#0a0a0a" },
+      // Open Graph site-level
       { property: "og:site_name", content: "Pro Athletic" },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_IN" },
+      // Geo meta tags (helps local search engines)
+      { name: "geo.region", content: "IN-PB" },
+      { name: "geo.placename", content: "Zirakpur, Punjab, India" },
+      { name: "geo.position", content: "30.6435;76.8177" },
+      { name: "ICBM", content: "30.6435, 76.8177" },
+      // Twitter card default
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@proathletic" },
+      { name: "format-detection", content: "telephone=no" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "dns-prefetch", href: "https://fonts.googleapis.com" },
+      { rel: "dns-prefetch", href: "https://fonts.gstatic.com" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap",
       },
+      { rel: "manifest", href: "/site.webmanifest" },
       { rel: "icon", href: "/favicon.png?v=2", type: "image/png" },
       { rel: "icon", href: "/favicon.ico?v=2", type: "image/x-icon" },
       { rel: "apple-touch-icon", href: "/favicon.png?v=2" },
@@ -104,7 +119,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <head>
         <HeadContent />
       </head>

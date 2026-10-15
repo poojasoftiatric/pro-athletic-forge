@@ -62,9 +62,9 @@ export function Contact() {
     <section id="contact" className="relative py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
-          eyebrow="Contact"
-          title="BOOK A FREE TRIAL"
-          subtitle="One session on us. Bring your goals, we'll bring the plan."
+          eyebrow="Contact & Free Pass"
+          title="VISIT US & BOOK A FREE TRIAL"
+          subtitle="Claim your complimentary workout session at Hollywood Plaza, VIP Road, Zirakpur. Speak with our certified coaches today."
         />
 
         <div className="mt-8 grid gap-6 lg:mt-10 lg:grid-cols-2">

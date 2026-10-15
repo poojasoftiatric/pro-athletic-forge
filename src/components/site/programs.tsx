@@ -7,25 +7,54 @@ import bodybuilding from "@/assets/prog-bodybuilding.jpg";
 import yoga from "@/assets/prog-yoga.jpg";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./why-us";
+import { handleNavClick } from "@/lib/navigation";
 
 const programs = [
-  { title: "Strength Training", desc: "Progressive barbell blocks for raw power.", img: strength },
-  { title: "Weight Loss", desc: "Conditioning and nutrition to shred fat fast.", img: cardio },
+  {
+    title: "Strength Training",
+    desc: "Progressive barbell strength training with power racks and Olympic barbells.",
+    img: strength,
+  },
+  {
+    title: "Weight Loss",
+    desc: "High-burn metabolic conditioning and nutritional guidance for sustainable fat loss.",
+    img: cardio,
+  },
   {
     title: "Functional Fitness",
-    desc: "Move better with sled, rope and kettlebell work.",
+    desc: "Athletic agility, sled pushes, battle ropes, and kettlebell conditioning on turf.",
     img: functional,
   },
-  { title: "CrossFit", desc: "High-intensity WODs coached in small groups.", img: crossfit },
+  {
+    title: "CrossFit",
+    desc: "High-intensity WODs coached in small, motivating groups by certified trainers.",
+    img: crossfit,
+  },
   {
     title: "Bodybuilding",
-    desc: "Hypertrophy programming for stage-ready shape.",
+    desc: "Targeted hypertrophy workouts and symmetry coaching for stage or personal goals.",
     img: bodybuilding,
   },
-  { title: "Cardio", desc: "Zone-based endurance on premium machines.", img: cardio },
-  { title: "HIIT", desc: "45-minute intervals that torch calories.", img: crossfit },
-  { title: "Yoga", desc: "Mobility, breath and recovery-focused flows.", img: yoga },
-  { title: "Powerlifting", desc: "Squat, bench and deadlift meet preparation.", img: strength },
+  {
+    title: "Cardio",
+    desc: "Zone 2 and VO2 max endurance workouts on premium treadmills, bikes, and rowers.",
+    img: cardio,
+  },
+  {
+    title: "HIIT",
+    desc: "Fast-paced 45-minute interval circuits that maximize calorie burn and endurance.",
+    img: crossfit,
+  },
+  {
+    title: "Yoga & Mobility",
+    desc: "Joint mobility, deep stretching, mindful breathing, and athletic recovery flows.",
+    img: yoga,
+  },
+  {
+    title: "Powerlifting",
+    desc: "Squat, bench press, and deadlift technique coaching for power and PRs.",
+    img: strength,
+  },
 ];
 
 export function Programs() {
@@ -33,9 +62,9 @@ export function Programs() {
     <section id="programs" className="relative py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
-          eyebrow="Programs"
+          eyebrow="Training Programs"
           title="TRAIN YOUR WAY"
-          subtitle="Nine coached disciplines, one membership. Switch whenever your goals change."
+          subtitle="Nine expert-coached fitness disciplines, all under one membership on VIP Road. Switch anytime."
         />
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:mt-10 lg:grid-cols-3">
           {programs.map((p, i) => (
@@ -44,7 +73,7 @@ export function Programs() {
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
                     src={p.img}
-                    alt={`${p.title} at Pro Athletic`}
+                    alt={`${p.title} session at Pro Athletic Gym Zirakpur`}
                     loading="lazy"
                     width={800}
                     height={600}
@@ -56,7 +85,8 @@ export function Programs() {
                   <h3 className="text-lg font-bold tracking-wide uppercase">{p.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
                   <a
-                    href="#contact"
+                    href="/contact"
+                    onClick={(e) => handleNavClick("/contact", e)}
                     className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-transform duration-300 group-hover:translate-x-1"
                   >
                     Learn More <ArrowUpRight size={16} />

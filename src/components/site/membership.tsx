@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./why-us";
+import { handleNavClick } from "@/lib/navigation";
 
 const plans = [
   {
@@ -40,9 +41,9 @@ export function Membership() {
     <section id="membership" className="relative py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
-          eyebrow="Membership"
-          title="CHOOSE YOUR LEVEL"
-          subtitle="No hidden fees. Cancel anytime. Every plan includes a free onboarding session."
+          eyebrow="Membership Pricing"
+          title="MEMBERSHIP PLANS & PRICING"
+          subtitle="Transparent gym packages with flexible 3, 6, and 12-month memberships in Zirakpur. Every plan includes a free personal onboarding session."
         />
         <div className="mt-8 grid items-stretch gap-6 lg:mt-10 lg:grid-cols-3">
           {plans.map((plan, i) => (
@@ -78,7 +79,8 @@ export function Membership() {
                   ))}
                 </ul>
                 <a
-                  href="#contact"
+                  href="/contact"
+                  onClick={(e) => handleNavClick("/contact", e)}
                   className={`mt-8 block w-full rounded-full py-3.5 text-center text-sm font-bold tracking-wide uppercase transition-all duration-300 hover:-translate-y-0.5 ${
                     plan.highlight
                       ? "text-primary-foreground hover:glow-red"

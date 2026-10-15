@@ -8,6 +8,7 @@ import t6 from "@/assets/Manpreet Yoga & Dance.png";
 import t7 from "@/assets/Vasu Fitness Trainer.png";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./why-us";
+import { handleNavClick } from "@/lib/navigation";
 
 const trainers = [
   { name: "Bhupesh", spec: "Branch Manager & Fitness Consultant", exp: "11 years", img: t3 },
@@ -24,9 +25,9 @@ export function Trainers() {
     <section id="trainers" className="relative py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
-          eyebrow="Trainers"
-          title="COACHED BY THE BEST"
-          subtitle="Every coach on the floor competes, studies and programs at a professional level."
+          eyebrow="Certified Trainers"
+          title="CERTIFIED PERSONAL TRAINERS"
+          subtitle="Train with 7+ nationally accredited fitness coaches specializing in strength, body transformations, functional movement, and yoga."
         />
         <div className="mt-8 flex flex-wrap justify-center gap-6 lg:mt-10">
           {trainers.map((t, i) => (
@@ -40,7 +41,7 @@ export function Trainers() {
                 <div className="relative aspect-[3/4] overflow-hidden">
                   <img
                     src={t.img}
-                    alt={`${t.name}, ${t.spec} coach`}
+                    alt={`${t.name} - ${t.spec} at Pro Athletic Gym Zirakpur (${t.exp} experience)`}
                     loading="lazy"
                     width={700}
                     height={900}
@@ -51,7 +52,8 @@ export function Trainers() {
                     {[Instagram, Twitter, Youtube].map((Icon, n) => (
                       <a
                         key={n}
-                        href="#trainers"
+                        href="/trainers"
+                        onClick={(e) => handleNavClick("/trainers", e)}
                         aria-label={`${t.name} social profile`}
                         className="rounded-full glass p-2.5 hover:text-primary"
                       >

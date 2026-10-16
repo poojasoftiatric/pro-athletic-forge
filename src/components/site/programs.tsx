@@ -1,10 +1,10 @@
 import { ArrowUpRight } from "lucide-react";
-import strength from "@/assets/prog-strength.jpg";
-import cardio from "@/assets/prog-cardio.jpg";
-import functional from "@/assets/prog-functional.jpg";
-import crossfit from "@/assets/prog-crossfit.jpg";
-import bodybuilding from "@/assets/prog-bodybuilding.jpg";
-import yoga from "@/assets/prog-yoga.jpg";
+import strength from "@/assets/prog-strength.webp";
+import cardio from "@/assets/prog-cardio.webp";
+import functional from "@/assets/prog-functional.webp";
+import crossfit from "@/assets/prog-crossfit.webp";
+import bodybuilding from "@/assets/prog-bodybuilding.webp";
+import yoga from "@/assets/prog-yoga.webp";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./why-us";
 import { handleNavClick } from "@/lib/navigation";
@@ -75,6 +75,7 @@ export function Programs() {
                     src={p.img}
                     alt={`${p.title} session at Pro Athletic Gym Zirakpur`}
                     loading="lazy"
+                    decoding="async"
                     width={800}
                     height={600}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"

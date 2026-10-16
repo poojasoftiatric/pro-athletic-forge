@@ -1,5 +1,5 @@
 import { Star } from "lucide-react";
-import heroImg from "@/assets/hero.jpg";
+import heroImg from "@/assets/hero.webp";
 import { Counter, Reveal } from "./reveal";
 import { handleNavClick } from "@/lib/navigation";
 

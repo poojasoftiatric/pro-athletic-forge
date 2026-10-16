@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
-import before1 from "@/assets/before-1.jpg";
-import after1 from "@/assets/after-1.jpg";
+import before1 from "@/assets/before-1.webp";
+import after1 from "@/assets/after-1.webp";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./why-us";
 
@@ -69,9 +69,10 @@ export function Transformations() {
                   src={after1}
                   alt="Member after their Pro Athletic transformation"
                   loading="lazy"
+                  decoding="async"
                   draggable={false}
                   width={800}
-                  height={1000}
+                  height={800}
                   className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center select-none"
                 />
                 <div
@@ -82,9 +83,10 @@ export function Transformations() {
                     src={before1}
                     alt="Member before their Pro Athletic transformation"
                     loading="lazy"
+                    decoding="async"
                     draggable={false}
                     width={800}
-                    height={1000}
+                    height={800}
                     className="pointer-events-none h-full w-full object-cover object-center select-none"
                     style={{ width: `${(100 / pos) * 100}%`, maxWidth: "none" }}
                   />

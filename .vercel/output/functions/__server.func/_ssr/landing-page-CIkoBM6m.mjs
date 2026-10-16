@@ -1,12 +1,12 @@
 import { r as __toESM } from "../_runtime.mjs";
-import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
+import { K as require_jsx_runtime, q as require_react } from "../_libs/@tanstack/react-router+[...].mjs";
 import { A as ArrowUpRight, C as Droplets, D as ChevronLeft, E as ChevronRight, O as Check, S as Dumbbell, T as Clock, _ as LockKeyhole, a as Twitter, b as Facebook, c as Snowflake, d as Plus, f as Phone, g as Lock, h as Mail, i as Waves, j as Activity, k as Car, l as ShieldCheck, m as MapPin, n as X, o as Star, p as Menu, r as Wifi, s as Sparkles, t as Youtube, u as Salad, v as Instagram, w as CupSoda, x as ExternalLink, y as Flame } from "../_libs/lucide-react.mjs";
 import { t as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/landing-page-jH8gJA-J.js
+//#region node_modules/.nitro/vite/services/ssr/assets/landing-page-CIkoBM6m.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var Logo_PAG_default = "/assets/Logo_PAG-DxjghSFF.jpeg";
+var Logo_PAG_default = "/assets/Logo_PAG-CvYn3Xz_.webp";
 function getSectionIdFromPath(pathname) {
 	const clean = pathname.replace(/^\/+|\/+$/g, "").toLowerCase();
 	if (!clean || clean === "home") return "home";
@@ -75,6 +75,8 @@ function Navbar() {
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 						src: Logo_PAG_default,
 						alt: "Pro Athletic Gyms Logo",
+						width: 36,
+						height: 36,
 						className: "h-9 w-9 shrink-0 rounded-full object-cover"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: ["PRO", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 						className: "text-primary",
@@ -124,7 +126,7 @@ function Navbar() {
 		})]
 	});
 }
-var hero_default = "/assets/hero-BDuIGdk_.jpg";
+var hero_default = "/assets/hero-CUSxsJqS.webp";
 function cn(...inputs) {
 	return twMerge(clsx(inputs));
 }
@@ -134,20 +136,34 @@ var hidden = {
 	right: "translate-x-10 opacity-0",
 	scale: "scale-95 opacity-0"
 };
+var sharedObserver = null;
+var observerCallbacks = /* @__PURE__ */ new Map();
+function observeElement(el, callback) {
+	if (typeof window === "undefined") return () => {};
+	if (!sharedObserver) sharedObserver = new IntersectionObserver((entries) => {
+		for (const entry of entries) if (entry.isIntersecting) {
+			const cb = observerCallbacks.get(entry.target);
+			if (cb) {
+				cb();
+				observerCallbacks.delete(entry.target);
+				sharedObserver?.unobserve(entry.target);
+			}
+		}
+	}, { threshold: .15 });
+	observerCallbacks.set(el, callback);
+	sharedObserver.observe(el);
+	return () => {
+		observerCallbacks.delete(el);
+		sharedObserver?.unobserve(el);
+	};
+}
 function Reveal({ children, direction = "up", delay = 0, className }) {
 	const ref = (0, import_react.useRef)(null);
 	const [shown, setShown] = (0, import_react.useState)(false);
 	(0, import_react.useEffect)(() => {
 		const el = ref.current;
 		if (!el) return;
-		const io = new IntersectionObserver((entries) => {
-			if (entries[0]?.isIntersecting) {
-				setShown(true);
-				io.disconnect();
-			}
-		}, { threshold: .15 });
-		io.observe(el);
-		return () => io.disconnect();
+		return observeElement(el, () => setShown(true));
 	}, []);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		ref,
@@ -162,9 +178,7 @@ function Counter({ to, suffix = "", duration = 1600 }) {
 	(0, import_react.useEffect)(() => {
 		const el = ref.current;
 		if (!el) return;
-		const io = new IntersectionObserver((entries) => {
-			if (!entries[0]?.isIntersecting) return;
-			io.disconnect();
+		return observeElement(el, () => {
 			const start = performance.now();
 			const tick = (now) => {
 				const p = Math.min((now - start) / duration, 1);
@@ -173,8 +187,6 @@ function Counter({ to, suffix = "", duration = 1600 }) {
 			};
 			requestAnimationFrame(tick);
 		});
-		io.observe(el);
-		return () => io.disconnect();
 	}, [to, duration]);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
 		ref,
@@ -503,10 +515,10 @@ function Membership() {
 		})
 	});
 }
-var prog_strength_default = "/assets/prog-strength-C-Mp6ly1.jpg";
-var prog_cardio_default = "/assets/prog-cardio-CzWs23r0.jpg";
-var prog_functional_default = "/assets/prog-functional-BsbNVzUA.jpg";
-var prog_crossfit_default = "/assets/prog-crossfit-BKpXFQWx.jpg";
+var prog_strength_default = "/assets/prog-strength-gAsZjEpy.webp";
+var prog_cardio_default = "/assets/prog-cardio-CJiVNr5Y.webp";
+var prog_functional_default = "/assets/prog-functional-D-45mQzi.webp";
+var prog_crossfit_default = "/assets/prog-crossfit-yu_9VjUD.webp";
 var programs$1 = [
 	{
 		title: "Strength Training",
@@ -531,7 +543,7 @@ var programs$1 = [
 	{
 		title: "Bodybuilding",
 		desc: "Targeted hypertrophy workouts and symmetry coaching for stage or personal goals.",
-		img: "/assets/prog-bodybuilding-kFPgB8oh.jpg"
+		img: "/assets/prog-bodybuilding-DJ6KSDUG.webp"
 	},
 	{
 		title: "Cardio",
@@ -546,7 +558,7 @@ var programs$1 = [
 	{
 		title: "Yoga & Mobility",
 		desc: "Joint mobility, deep stretching, mindful breathing, and athletic recovery flows.",
-		img: "/assets/prog-yoga-HvQ7yFFI.jpg"
+		img: "/assets/prog-yoga-nBvD9DyQ.webp"
 	},
 	{
 		title: "Powerlifting",
@@ -577,6 +589,7 @@ function Programs() {
 								src: p.img,
 								alt: `${p.title} session at Pro Athletic Gym Zirakpur`,
 								loading: "lazy",
+								decoding: "async",
 								width: 800,
 								height: 600,
 								className: "h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -611,43 +624,43 @@ var trainers = [
 		name: "Bhupesh",
 		spec: "Branch Manager & Fitness Consultant",
 		exp: "11 years",
-		img: "/assets/Bhupesh-CAyR2HGb.png"
+		img: "/assets/Bhupesh-BV4f8N-4.webp"
 	},
 	{
 		name: "Kishan",
 		spec: "Fitness Trainer",
 		exp: "8 years",
-		img: "/assets/Kishan%20Trainer-BivygXfs.jpeg"
+		img: "/assets/Kishan%20Trainer-FqXdL2Ah.webp"
 	},
 	{
 		name: "Rohit",
 		spec: "Fitness Trainer",
 		exp: "5 years",
-		img: "/assets/Rohit_trainer-Dmpm622p.png"
+		img: "/assets/Rohit_trainer-DXLKj9ew.webp"
 	},
 	{
 		name: "Vasu",
 		spec: "Fitness Trainer",
 		exp: "9 years",
-		img: "/assets/Vasu%20Fitness%20Trainer-BuPvxKLB.png"
+		img: "/assets/Vasu%20Fitness%20Trainer-Bwr4lBA-.webp"
 	},
 	{
 		name: "Ankush",
 		spec: "Fitness Trainer",
 		exp: "7 years",
-		img: "/assets/Ankush-DfZc4gub.png"
+		img: "/assets/Ankush-BEvuLvrF.webp"
 	},
 	{
 		name: "Manpreet",
 		spec: "Yoga & Dance Instructor",
 		exp: "8 years",
-		img: "/assets/Manpreet%20Yoga%20_%20Dance-DxLWe4H6.png"
+		img: "/assets/Manpreet%20Yoga%20_%20Dance-BHYFqiE_.webp"
 	},
 	{
 		name: "Yogesh",
 		spec: "Relationship Manager",
 		exp: "10 years",
-		img: "/assets/Yogesh-De95keAc.png"
+		img: "/assets/Yogesh-BOQSn26f.webp"
 	}
 ];
 function Trainers() {
@@ -675,8 +688,9 @@ function Trainers() {
 									src: t.img,
 									alt: `${t.name} - ${t.spec} at Pro Athletic Gym Zirakpur (${t.exp} experience)`,
 									loading: "lazy",
-									width: 700,
-									height: 900,
+									decoding: "async",
+									width: 600,
+									height: 750,
 									className: "h-full w-full object-contain object-top transition-transform duration-700 group-hover:scale-110"
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" }),
@@ -859,8 +873,8 @@ function BmiCalculator() {
 		})
 	});
 }
-var before_1_default = "/assets/before-1-DiJqBtj8.jpg";
-var after_1_default = "/assets/after-1-CatvZzS7.jpg";
+var before_1_default = "/assets/before-1-i9bIdmuy.webp";
+var after_1_default = "/assets/after-1-Dn3tluxi.webp";
 var results = [
 	{
 		name: "Rohit",
@@ -928,9 +942,10 @@ function Transformations() {
 										src: after_1_default,
 										alt: "Member after their Pro Athletic transformation",
 										loading: "lazy",
+										decoding: "async",
 										draggable: false,
 										width: 800,
-										height: 1e3,
+										height: 800,
 										className: "pointer-events-none absolute inset-0 h-full w-full object-cover object-center select-none"
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
@@ -940,9 +955,10 @@ function Transformations() {
 											src: before_1_default,
 											alt: "Member before their Pro Athletic transformation",
 											loading: "lazy",
+											decoding: "async",
 											draggable: false,
 											width: 800,
-											height: 1e3,
+											height: 800,
 											className: "pointer-events-none h-full w-full object-cover object-center select-none",
 											style: {
 												width: `${100 / pos * 100}%`,
@@ -1276,37 +1292,37 @@ function Testimonials() {
 }
 var shots = [
 	{
-		img: "/assets/gal-weights-7h1X1qbM.jpg",
+		img: "/assets/gal-weights-DuJZH_z_.webp",
 		label: "Weight Section",
 		w: 900,
 		h: 1200
 	},
 	{
-		img: "/assets/gal-cardio-q7SaJd1H.jpg",
+		img: "/assets/gal-cardio-kUMFhjSu.webp",
 		label: "Cardio Zone",
 		w: 900,
 		h: 700
 	},
 	{
-		img: "/assets/gal-functional-DLvgpnzZ.jpg",
+		img: "/assets/gal-functional-Bb8dHoA5.webp",
 		label: "Functional Zone",
 		w: 900,
 		h: 700
 	},
 	{
-		img: "/assets/gal-locker-qIaDGkvj.jpg",
+		img: "/assets/gal-locker-CC0GnEpn.webp",
 		label: "Locker Rooms",
 		w: 900,
 		h: 1200
 	},
 	{
-		img: "/assets/gal-reception-CDgzqd2a.jpg",
+		img: "/assets/gal-reception-Cogrlndq.webp",
 		label: "Reception",
 		w: 900,
 		h: 700
 	},
 	{
-		img: "/assets/gal-recovery-B3ZXHpcr.jpg",
+		img: "/assets/gal-recovery-hy0bxcGk.webp",
 		label: "Recovery Area",
 		w: 900,
 		h: 1100
@@ -1333,6 +1349,7 @@ function Gallery() {
 							src: s.img,
 							alt: `${s.label} zone and equipment at Pro Athletic Gym Zirakpur`,
 							loading: "lazy",
+							decoding: "async",
 							width: s.w,
 							height: s.h,
 							className: "w-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -1692,6 +1709,9 @@ function Footer() {
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: Logo_PAG_default,
 							alt: "Pro Athletic Gyms Logo",
+							width: 36,
+							height: 36,
+							loading: "lazy",
 							className: "h-9 w-9 shrink-0 rounded-full object-cover"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: ["PRO", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-primary",

@@ -6,6 +6,10 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import { nitro } from "nitro/vite";
 
 export default defineConfig({
+  build: {
+    target: "es2022",
+    cssMinify: true,
+  },
   plugins: [
     tanstackStart({
       server: { entry: "server" },

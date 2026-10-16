@@ -1,9 +1,7 @@
-import { n as require_jsx_runtime, t as QueryClientProvider } from "../_libs/react+tanstack__react-query.mjs";
-import { _ as createFileRoute, b as useRouter, d as Scripts, f as HeadContent, g as lazyRouteComponent, h as Outlet, m as createRouter, v as createRootRouteWithContext, y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DZAg0wLf.js
+import { K as require_jsx_runtime, _ as createFileRoute, b as useRouter, d as Scripts, f as HeadContent, g as lazyRouteComponent, h as Outlet, m as createRouter, v as createRootRoute, y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/router-CZSqaRah.js
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-CHIJl7yb.css";
+var styles_default = "/assets/styles-B_yeDbTw.css";
 function NotFoundComponent() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		className: "flex min-h-screen items-center justify-center bg-background px-4",
@@ -69,7 +67,7 @@ function ErrorComponent({ error, reset }) {
 		})
 	});
 }
-var Route$9 = createRootRouteWithContext()({
+var Route$9 = createRootRoute({
 	head: () => ({
 		meta: [
 			{ charSet: "utf-8" },
@@ -132,25 +130,18 @@ var Route$9 = createRootRouteWithContext()({
 				href: styles_default
 			},
 			{
-				rel: "dns-prefetch",
-				href: "https://fonts.googleapis.com"
-			},
-			{
-				rel: "dns-prefetch",
-				href: "https://fonts.gstatic.com"
-			},
-			{
-				rel: "preconnect",
-				href: "https://fonts.googleapis.com"
-			},
-			{
-				rel: "preconnect",
-				href: "https://fonts.gstatic.com",
+				rel: "preload",
+				href: "/fonts/bebas-neue-regular.woff2",
+				as: "font",
+				type: "font/woff2",
 				crossOrigin: "anonymous"
 			},
 			{
-				rel: "stylesheet",
-				href: "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap"
+				rel: "preload",
+				href: "/fonts/poppins-600.woff2",
+				as: "font",
+				type: "font/woff2",
+				crossOrigin: "anonymous"
 			},
 			{
 				rel: "manifest",
@@ -184,11 +175,7 @@ function RootShell({ children }) {
 	});
 }
 function RootComponent() {
-	const { queryClient } = Route$9.useRouteContext();
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(QueryClientProvider, {
-		client: queryClient,
-		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {})
-	});
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {});
 }
 var SITE_URL = "https://www.proathleticgyms.in";
 var gymSchema = {
@@ -474,7 +461,7 @@ var contactSchema = {
 	url: `${SITE_URL}/contact`,
 	mainEntity: { "@id": `${SITE_URL}/#gym` }
 };
-var $$splitComponentImporter$8 = () => import("./routes-CnClpg07.mjs");
+var $$splitComponentImporter$8 = () => import("./routes-DjrQU74c.mjs");
 var title$8 = "Pro Athletic | Best Gym in Zirakpur — VIP Road Fitness Center";
 var description$8 = "Join Pro Athletic, Punjab's premier gym in Zirakpur on VIP Road. 7+ certified trainers, 18-hr access, CrossFit, Strength Training & Yoga. Book your free trial!";
 var Route$8 = createFileRoute("/")({
@@ -564,7 +551,7 @@ var Route$8 = createFileRoute("/")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$8, "component")
 });
-var $$splitComponentImporter$7 = () => import("./about-B-UH_oDK.mjs");
+var $$splitComponentImporter$7 = () => import("./about-Bs-LR8rq.mjs");
 var title$7 = "About Us | Pro Athletic Gym in Zirakpur, Punjab";
 var description$7 = "Discover Pro Athletic in Zirakpur. Explore our 18-hour facility, Olympic equipment, certified personal trainers, and performance fitness community on VIP Road.";
 var breadcrumb$6 = createBreadcrumbSchema([{
@@ -653,7 +640,7 @@ var Route$7 = createFileRoute("/about")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$7, "component")
 });
-var $$splitComponentImporter$6 = () => import("./contact-BYOh_ZAB.mjs");
+var $$splitComponentImporter$6 = () => import("./contact-Ytjidmdw.mjs");
 var title$6 = "Contact & Book Free Trial Pass | Pro Athletic Gym Zirakpur";
 var description$6 = "Contact Pro Athletic Gym at Hollywood Plaza, VIP Road, Zirakpur. Call +91-98200-44120 or book your 100% free workout session online today!";
 var breadcrumb$5 = createBreadcrumbSchema([{
@@ -742,7 +729,7 @@ var Route$6 = createFileRoute("/contact")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$6, "component")
 });
-var $$splitComponentImporter$5 = () => import("./gallery-CPPIpzAQ.mjs");
+var $$splitComponentImporter$5 = () => import("./gallery-Dm0I9k-P.mjs");
 var title$5 = "Gym Photos & Facilities Tour | Pro Athletic Zirakpur";
 var description$5 = "Take a virtual photo tour of Pro Athletic Gym in Zirakpur. View our Olympic weightlifting stations, cardio theater, CrossFit turf, and luxury recovery zones.";
 var breadcrumb$4 = createBreadcrumbSchema([{
@@ -838,7 +825,7 @@ var Route$5 = createFileRoute("/gallery")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$5, "component")
 });
-var $$splitComponentImporter$4 = () => import("./home-9J7TIlL7.mjs");
+var $$splitComponentImporter$4 = () => import("./home-MZ-LtaA7.mjs");
 var title$4 = "Pro Athletic | Best Gym in Zirakpur — VIP Road Fitness Center";
 var description$4 = "Join Pro Athletic, Punjab's premier gym in Zirakpur on VIP Road. 7+ certified trainers, 18-hr access, CrossFit, Strength Training & Yoga. Book your free trial!";
 var Route$4 = createFileRoute("/home")({
@@ -917,7 +904,7 @@ var Route$4 = createFileRoute("/home")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$4, "component")
 });
-var $$splitComponentImporter$3 = () => import("./membership-SpKeQJB_.mjs");
+var $$splitComponentImporter$3 = () => import("./membership-mUyxkWf_.mjs");
 var title$3 = "Gym Membership & Pricing | Pro Athletic Gyms Zirakpur";
 var description$3 = "Transparent gym membership plans in Zirakpur starting at ₹5,000. Includes 18-hour access, certified coaches, sauna & steam bath. Claim your free trial session!";
 var breadcrumb$3 = createBreadcrumbSchema([{
@@ -1006,7 +993,7 @@ var Route$3 = createFileRoute("/membership")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-var $$splitComponentImporter$2 = () => import("./programs-OWmOo8I6.mjs");
+var $$splitComponentImporter$2 = () => import("./programs-BsbIMFFS.mjs");
 var title$2 = "Training Programs & Classes | Pro Athletic Gym Zirakpur";
 var description$2 = "Explore 9 expert-coached fitness programs at Pro Athletic Zirakpur: Strength Training, CrossFit, Weight Loss, Bodybuilding, Yoga & HIIT. Start training today!";
 var breadcrumb$2 = createBreadcrumbSchema([{
@@ -1095,7 +1082,7 @@ var Route$2 = createFileRoute("/programs")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./testimonials-4wW588hD.mjs");
+var $$splitComponentImporter$1 = () => import("./testimonials-DMyC40kO.mjs");
 var title$1 = "Member Reviews & Success Stories | Pro Athletic Zirakpur";
 var description$1 = "Read real member reviews and body transformation stories from Pro Athletic Gym in Zirakpur. Rated 5/5 stars on Google by 80+ happy fitness athletes.";
 var breadcrumb$1 = createBreadcrumbSchema([{
@@ -1191,7 +1178,7 @@ var Route$1 = createFileRoute("/testimonials")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-var $$splitComponentImporter = () => import("./trainers-DIZGDw3J.mjs");
+var $$splitComponentImporter = () => import("./trainers-B8EI9P-5.mjs");
 var title = "Certified Personal Trainers in Zirakpur | Pro Athletic";
 var description = "Meet 7+ certified personal coaches at Pro Athletic Zirakpur with 5-11 years of experience in strength training, bodybuilding, fat loss, yoga, and conditioning.";
 var breadcrumb = createBreadcrumbSchema([{
@@ -1329,10 +1316,8 @@ var rootRouteChildren = {
 };
 var routeTree = Route$9._addFileChildren(rootRouteChildren)._addFileTypes();
 var getRouter = () => {
-	const queryClient = new QueryClient();
 	return createRouter({
 		routeTree,
-		context: { queryClient },
 		scrollRestoration: false,
 		defaultPreloadStaleTime: 0
 	});

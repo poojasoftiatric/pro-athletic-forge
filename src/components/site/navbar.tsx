@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logoPag from "@/assets/Logo_PAG.jpeg";
+import logoPag from "@/assets/Logo_PAG.webp";
 import { handleNavClick } from "@/lib/navigation";
 
 const links = [
@@ -43,6 +43,8 @@ export function Navbar() {
           <img
             src={logoPag}
             alt="Pro Athletic Gyms Logo"
+            width={36}
+            height={36}
             className="h-9 w-9 shrink-0 rounded-full object-cover"
           />
           <span>

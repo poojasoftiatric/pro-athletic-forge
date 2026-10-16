@@ -1,11 +1,11 @@
 import { Instagram, Twitter, Youtube } from "lucide-react";
-import t1 from "@/assets/Kishan Trainer.jpeg";
-import t2 from "@/assets/Yogesh.png";
-import t3 from "@/assets/Bhupesh.png";
-import t4 from "@/assets/Ankush.png";
-import t5 from "@/assets/Rohit_trainer.png";
-import t6 from "@/assets/Manpreet Yoga & Dance.png";
-import t7 from "@/assets/Vasu Fitness Trainer.png";
+import t1 from "@/assets/Kishan Trainer.webp";
+import t2 from "@/assets/Yogesh.webp";
+import t3 from "@/assets/Bhupesh.webp";
+import t4 from "@/assets/Ankush.webp";
+import t5 from "@/assets/Rohit_trainer.webp";
+import t6 from "@/assets/Manpreet Yoga & Dance.webp";
+import t7 from "@/assets/Vasu Fitness Trainer.webp";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./why-us";
 import { handleNavClick } from "@/lib/navigation";
@@ -43,8 +43,9 @@ export function Trainers() {
                     src={t.img}
                     alt={`${t.name} - ${t.spec} at Pro Athletic Gym Zirakpur (${t.exp} experience)`}
                     loading="lazy"
-                    width={700}
-                    height={900}
+                    decoding="async"
+                    width={600}
+                    height={750}
                     className="h-full w-full object-contain object-top transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />

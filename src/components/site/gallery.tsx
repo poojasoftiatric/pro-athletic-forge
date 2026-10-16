@@ -1,9 +1,9 @@
-import weights from "@/assets/gal-weights.jpg";
-import cardio from "@/assets/gal-cardio.jpg";
-import reception from "@/assets/gal-reception.jpg";
-import locker from "@/assets/gal-locker.jpg";
-import functional from "@/assets/gal-functional.jpg";
-import recovery from "@/assets/gal-recovery.jpg";
+import weights from "@/assets/gal-weights.webp";
+import cardio from "@/assets/gal-cardio.webp";
+import reception from "@/assets/gal-reception.webp";
+import locker from "@/assets/gal-locker.webp";
+import functional from "@/assets/gal-functional.webp";
+import recovery from "@/assets/gal-recovery.webp";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./why-us";
 
@@ -33,6 +33,7 @@ export function Gallery() {
                   src={s.img}
                   alt={`${s.label} zone and equipment at Pro Athletic Gym Zirakpur`}
                   loading="lazy"
+                  decoding="async"
                   width={s.w}
                   height={s.h}
                   className="w-full object-cover transition-transform duration-700 group-hover:scale-110"

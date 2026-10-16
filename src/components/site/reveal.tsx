@@ -10,6 +10,36 @@ const hidden: Record<Direction, string> = {
   scale: "scale-95 opacity-0",
 };
 
+let sharedObserver: IntersectionObserver | null = null;
+const observerCallbacks = new Map<Element, () => void>();
+
+function observeElement(el: Element, callback: () => void) {
+  if (typeof window === "undefined") return () => {};
+  if (!sharedObserver) {
+    sharedObserver = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const cb = observerCallbacks.get(entry.target);
+            if (cb) {
+              cb();
+              observerCallbacks.delete(entry.target);
+              sharedObserver?.unobserve(entry.target);
+            }
+          }
+        }
+      },
+      { threshold: 0.15 },
+    );
+  }
+  observerCallbacks.set(el, callback);
+  sharedObserver.observe(el);
+  return () => {
+    observerCallbacks.delete(el);
+    sharedObserver?.unobserve(el);
+  };
+}
+
 export function Reveal({
   children,
   direction = "up",
@@ -27,17 +57,7 @@ export function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (entries[0]?.isIntersecting) {
-          setShown(true);
-          io.disconnect();
-        }
-      },
-      { threshold: 0.15 },
-    );
-    io.observe(el);
-    return () => io.disconnect();
+    return observeElement(el, () => setShown(true));
   }, []);
 
   return (
@@ -70,9 +90,7 @@ export function Counter({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const io = new IntersectionObserver((entries) => {
-      if (!entries[0]?.isIntersecting) return;
-      io.disconnect();
+    return observeElement(el, () => {
       const start = performance.now();
       const tick = (now: number) => {
         const p = Math.min((now - start) / duration, 1);
@@ -81,8 +99,6 @@ export function Counter({
       };
       requestAnimationFrame(tick);
     });
-    io.observe(el);
-    return () => io.disconnect();
   }, [to, duration]);
 
   return (

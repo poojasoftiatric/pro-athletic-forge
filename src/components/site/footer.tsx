@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
-import logoPag from "@/assets/Logo_PAG.jpeg";
+import logoPag from "@/assets/Logo_PAG.webp";
 import { handleNavClick } from "@/lib/navigation";
 
 const quick = ["Home", "About", "Programs", "Membership", "Trainers", "Contact"];
@@ -58,6 +58,9 @@ export function Footer() {
             <img
               src={logoPag}
               alt="Pro Athletic Gyms Logo"
+              width={36}
+              height={36}
+              loading="lazy"
               className="h-9 w-9 shrink-0 rounded-full object-cover"
             />
             <span>

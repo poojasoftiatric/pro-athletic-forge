@@ -9,6 +9,26 @@ export default defineConfig({
   build: {
     target: "es2022",
     cssMinify: true,
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks(id: string): string | void {
+          if (
+            id.includes("node_modules/react/") ||
+            id.includes("node_modules/react-dom/") ||
+            id.includes("node_modules/scheduler/")
+          ) {
+            return "vendor-react";
+          }
+          if (
+            id.includes("node_modules/@tanstack/") ||
+            id.includes("node_modules/seroval")
+          ) {
+            return "vendor-router";
+          }
+        },
+      },
+    },
   },
   plugins: [
     tanstackStart({

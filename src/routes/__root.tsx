@@ -104,6 +104,13 @@ export const Route = createRootRoute({
       },
       {
         rel: "preload",
+        href: "/fonts/poppins-400.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "preload",
         href: "/fonts/poppins-600.woff2",
         as: "font",
         type: "font/woff2",

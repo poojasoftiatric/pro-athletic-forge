@@ -76,8 +76,8 @@ export function Programs() {
                     alt={`${p.title} session at Pro Athletic Gym Zirakpur`}
                     loading="lazy"
                     decoding="async"
-                    width={800}
-                    height={600}
+                    width={640}
+                    height={480}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />

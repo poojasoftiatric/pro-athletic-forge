@@ -1,0 +1,1 @@
+import{t as e}from"./vendor-react-B9RXrzN6.js";import{t}from"./landing-page-B_SinkU1.js";var n=e(),r=()=>(0,n.jsx)(t,{initialSection:`contact`});export{r as component};

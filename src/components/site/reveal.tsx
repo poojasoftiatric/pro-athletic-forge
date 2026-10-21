@@ -57,7 +57,14 @@ export function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    return observeElement(el, () => setShown(true));
+    let cleanup: (() => void) | undefined;
+    const rafId = requestAnimationFrame(() => {
+      cleanup = observeElement(el, () => setShown(true));
+    });
+    return () => {
+      cancelAnimationFrame(rafId);
+      cleanup?.();
+    };
   }, []);
 
   return (

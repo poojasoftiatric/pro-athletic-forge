@@ -26,12 +26,17 @@ export function Navbar() {
         setScrolled(window.scrollY > 40);
       });
     };
-    rafId = requestAnimationFrame(() => {
-      setScrolled(window.scrollY > 40);
-    });
+
     window.addEventListener("scroll", onScroll, { passive: true });
+
+    // Check scroll position after browser completes initial paint to avoid forced reflow
+    const timer = setTimeout(() => {
+      if (window.scrollY > 40) setScrolled(true);
+    }, 200);
+
     return () => {
       cancelAnimationFrame(rafId);
+      clearTimeout(timer);
       window.removeEventListener("scroll", onScroll);
     };
   }, []);

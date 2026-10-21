@@ -13,16 +13,17 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks(id: string): string | void {
+          const norm = id.replace(/\\/g, "/");
           if (
-            id.includes("node_modules/react/") ||
-            id.includes("node_modules/react-dom/") ||
-            id.includes("node_modules/scheduler/")
+            norm.includes("node_modules/react/") ||
+            norm.includes("node_modules/react-dom/") ||
+            norm.includes("node_modules/scheduler/")
           ) {
             return "vendor-react";
           }
           if (
-            id.includes("node_modules/@tanstack/") ||
-            id.includes("node_modules/seroval")
+            norm.includes("node_modules/@tanstack/react-router/") ||
+            norm.includes("node_modules/@tanstack/router-core/")
           ) {
             return "vendor-router";
           }

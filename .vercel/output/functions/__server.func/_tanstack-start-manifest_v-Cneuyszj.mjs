@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-Cwtavz-a.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-Cneuyszj.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "C:/Users/User/Desktop/Pro Athletic/pro-athletic-forge/src/routes/__root.tsx",
@@ -14,60 +14,61 @@ var tsrStartManifest = () => ({ routes: {
 			"/trainers"
 		],
 		preloads: [
-			"/assets/index-BhESGyn8.js",
+			"/assets/index-CDGZKEZY.js",
 			"/assets/rolldown-runtime-CbXtAM7H.js",
-			"/assets/vendor-react-B9RXrzN6.js"
+			"/assets/vendor-react-B9RXrzN6.js",
+			"/assets/vendor-router-CbsZLqLa.js"
 		],
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-BhESGyn8.js"
+			src: "/assets/index-CDGZKEZY.js"
 		} }]
 	},
 	"/": {
 		filePath: "C:/Users/User/Desktop/Pro Athletic/pro-athletic-forge/src/routes/index.tsx",
 		children: void 0,
-		preloads: ["/assets/routes-CkuCWCOY.js", "/assets/landing-page-Cc_4hFdD.js"]
+		preloads: ["/assets/routes-wNY4ood8.js", "/assets/landing-page-SuFgNThu.js"]
 	},
 	"/about": {
 		filePath: "C:/Users/User/Desktop/Pro Athletic/pro-athletic-forge/src/routes/about.tsx",
 		children: void 0,
-		preloads: ["/assets/about-rB0YV3A2.js", "/assets/landing-page-Cc_4hFdD.js"]
+		preloads: ["/assets/about-B3jyIxe6.js", "/assets/landing-page-SuFgNThu.js"]
 	},
 	"/contact": {
 		filePath: "C:/Users/User/Desktop/Pro Athletic/pro-athletic-forge/src/routes/contact.tsx",
 		children: void 0,
-		preloads: ["/assets/contact-CzaNM0_i.js", "/assets/landing-page-Cc_4hFdD.js"]
+		preloads: ["/assets/contact-BuRrqhBj.js", "/assets/landing-page-SuFgNThu.js"]
 	},
 	"/gallery": {
 		filePath: "C:/Users/User/Desktop/Pro Athletic/pro-athletic-forge/src/routes/gallery.tsx",
 		children: void 0,
-		preloads: ["/assets/gallery-SCrc_NrE.js", "/assets/landing-page-Cc_4hFdD.js"]
+		preloads: ["/assets/gallery-BSbx9-Yz.js", "/assets/landing-page-SuFgNThu.js"]
 	},
 	"/home": {
 		filePath: "C:/Users/User/Desktop/Pro Athletic/pro-athletic-forge/src/routes/home.tsx",
 		children: void 0,
-		preloads: ["/assets/home-CGHaxgIZ.js", "/assets/landing-page-Cc_4hFdD.js"]
+		preloads: ["/assets/home-Dwb37mLl.js", "/assets/landing-page-SuFgNThu.js"]
 	},
 	"/membership": {
 		filePath: "C:/Users/User/Desktop/Pro Athletic/pro-athletic-forge/src/routes/membership.tsx",
 		children: void 0,
-		preloads: ["/assets/membership-YUDd_CFH.js", "/assets/landing-page-Cc_4hFdD.js"]
+		preloads: ["/assets/membership-DwIhMs7x.js", "/assets/landing-page-SuFgNThu.js"]
 	},
 	"/programs": {
 		filePath: "C:/Users/User/Desktop/Pro Athletic/pro-athletic-forge/src/routes/programs.tsx",
 		children: void 0,
-		preloads: ["/assets/programs-BSKXVysy.js", "/assets/landing-page-Cc_4hFdD.js"]
+		preloads: ["/assets/programs-CWJwWQH1.js", "/assets/landing-page-SuFgNThu.js"]
 	},
 	"/testimonials": {
 		filePath: "C:/Users/User/Desktop/Pro Athletic/pro-athletic-forge/src/routes/testimonials.tsx",
 		children: void 0,
-		preloads: ["/assets/testimonials-64PWNJ6K.js", "/assets/landing-page-Cc_4hFdD.js"]
+		preloads: ["/assets/testimonials-gZKxZWvg.js", "/assets/landing-page-SuFgNThu.js"]
 	},
 	"/trainers": {
 		filePath: "C:/Users/User/Desktop/Pro Athletic/pro-athletic-forge/src/routes/trainers.tsx",
 		children: void 0,
-		preloads: ["/assets/trainers-B4J5kIha.js", "/assets/landing-page-Cc_4hFdD.js"]
+		preloads: ["/assets/trainers-BKS58-fE.js", "/assets/landing-page-SuFgNThu.js"]
 	}
 } });
 //#endregion

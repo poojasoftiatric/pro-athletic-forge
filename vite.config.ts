@@ -21,11 +21,11 @@ export default defineConfig({
           ) {
             return "vendor-react";
           }
-          if (
-            norm.includes("node_modules/@tanstack/react-router/") ||
-            norm.includes("node_modules/@tanstack/router-core/")
-          ) {
-            return "vendor-router";
+          if (norm.includes("node_modules/@tanstack/router-core/")) {
+            return "vendor-router-core";
+          }
+          if (norm.includes("node_modules/@tanstack/react-router/")) {
+            return "vendor-router-react";
           }
         },
       },

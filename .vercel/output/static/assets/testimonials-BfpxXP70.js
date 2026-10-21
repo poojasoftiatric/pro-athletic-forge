@@ -1,0 +1,1 @@
+import{t as e}from"./vendor-react-B9RXrzN6.js";import{t}from"./landing-page-CrrymM_0.js";var n=e(),r=()=>(0,n.jsx)(t,{initialSection:`testimonials`});export{r as component};

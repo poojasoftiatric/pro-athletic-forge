@@ -4,14 +4,14 @@ import logoPag from "@/assets/Logo_PAG.webp";
 import { handleNavClick } from "@/lib/navigation";
 
 const links = [
-  ["Home", "/home"],
-  ["About", "/about"],
-  ["Programs", "/programs"],
-  ["Membership", "/membership"],
-  ["Trainers", "/trainers"],
-  ["Testimonials", "/testimonials"],
-  ["Gallery", "/gallery"],
-  ["Contact", "/contact"],
+  ["Home", "#home"],
+  ["About", "#about"],
+  ["Programs", "#programs"],
+  ["Membership", "#membership"],
+  ["Trainers", "#trainers"],
+  ["Testimonials", "#testimonials"],
+  ["Gallery", "#gallery"],
+  ["Contact", "#contact"],
 ] as const;
 
 export function Navbar() {
@@ -47,8 +47,8 @@ export function Navbar() {
         className="mx-auto flex max-w-7xl items-center justify-between px-5 lg:px-8"
       >
         <a
-          href="/home"
-          onClick={(e) => handleNavClick("/home", e)}
+          href="#home"
+          onClick={(e) => handleNavClick("#home", e)}
           className="flex items-center gap-2.5 display text-2xl tracking-widest"
         >
           <img
@@ -79,8 +79,8 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <a
-            href="/membership"
-            onClick={(e) => handleNavClick("/membership", e)}
+            href="#membership"
+            onClick={(e) => handleNavClick("#membership", e)}
             className="hidden rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:glow-red hover:brightness-110 sm:inline-flex"
           >
             Join Now

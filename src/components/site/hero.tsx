@@ -62,16 +62,16 @@ export function Hero() {
         <Reveal direction="up" delay={300}>
           <div className="mt-9 flex flex-wrap gap-4">
             <a
-              href="/contact"
-              onClick={(e) => handleNavClick("/contact", e)}
+              href="#contact"
+              onClick={(e) => handleNavClick("#contact", e)}
               className="rounded-full px-8 py-4 text-sm font-bold tracking-wide uppercase text-primary-foreground transition-all duration-300 hover:glow-red hover:-translate-y-0.5"
               style={{ background: "var(--gradient-red)" }}
             >
               Start Today
             </a>
             <a
-              href="/membership"
-              onClick={(e) => handleNavClick("/membership", e)}
+              href="#membership"
+              onClick={(e) => handleNavClick("#membership", e)}
               className="rounded-full glass px-8 py-4 text-sm font-bold tracking-wide uppercase transition-all duration-300 hover:-translate-y-0.5 hover:border-primary"
             >
               View Membership

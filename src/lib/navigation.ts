@@ -11,8 +11,8 @@ export const SECTION_ROUTES = [
 
 export type SectionRoute = (typeof SECTION_ROUTES)[number];
 
-export function getSectionIdFromPath(pathname: string): string {
-  const clean = pathname.replace(/^\/+|\/+$/g, "").toLowerCase();
+export function getSectionIdFromPath(target: string): string {
+  const clean = target.replace(/^#|^\/+|\/+$/g, "").toLowerCase();
   if (!clean || clean === "home") return "home";
   return clean;
 }
@@ -27,13 +27,13 @@ export function scrollToSection(sectionId: string, smooth: boolean = true) {
   const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
   window.scrollTo({
-    top: Math.max(0, offsetPosition),
+    top: Math.max(0, Math.round(offsetPosition)),
     behavior: smooth ? "smooth" : "auto",
   });
   return true;
 }
 
-export function handleNavClick(path: string, e?: React.MouseEvent) {
+export function handleNavClick(target: string, e?: React.MouseEvent) {
   if (e) {
     if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) {
       return;
@@ -41,14 +41,14 @@ export function handleNavClick(path: string, e?: React.MouseEvent) {
     e.preventDefault();
   }
 
-  const sectionId = getSectionIdFromPath(path);
-  const targetPath = path.startsWith("/") ? path : `/${path}`;
+  const sectionId = getSectionIdFromPath(target);
+  scrollToSection(sectionId, true);
 
   if (typeof window !== "undefined") {
-    if (window.location.pathname !== targetPath) {
-      window.history.pushState(null, "", targetPath);
+    const newHash = `#${sectionId}`;
+    if (window.location.hash !== newHash) {
+      window.history.replaceState(window.history.state, "", newHash);
     }
-    scrollToSection(sectionId, true);
   }
 }
 
@@ -56,10 +56,16 @@ export function initPopStateListener() {
   if (typeof window === "undefined") return () => {};
 
   const handlePopState = () => {
-    const sectionId = getSectionIdFromPath(window.location.pathname);
+    const hash = window.location.hash.replace(/^#/, "");
+    const path = window.location.pathname.replace(/^\/+|\/+$/g, "");
+    const sectionId = getSectionIdFromPath(hash || path);
     scrollToSection(sectionId, true);
   };
 
   window.addEventListener("popstate", handlePopState);
-  return () => window.removeEventListener("popstate", handlePopState);
+  window.addEventListener("hashchange", handlePopState);
+  return () => {
+    window.removeEventListener("popstate", handlePopState);
+    window.removeEventListener("hashchange", handlePopState);
+  };
 }

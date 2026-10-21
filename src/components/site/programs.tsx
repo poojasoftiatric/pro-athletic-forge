@@ -86,8 +86,8 @@ export function Programs() {
                   <h3 className="text-lg font-bold tracking-wide uppercase">{p.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
                   <a
-                    href="/contact"
-                    onClick={(e) => handleNavClick("/contact", e)}
+                    href="#contact"
+                    onClick={(e) => handleNavClick("#contact", e)}
                     className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-transform duration-300 group-hover:translate-x-1"
                   >
                     Learn More <ArrowUpRight size={16} />

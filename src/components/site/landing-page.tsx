@@ -21,12 +21,13 @@ export function LandingPage({ initialSection }: { initialSection?: string }) {
   useEffect(() => {
     const cleanup = initPopStateListener();
 
-    // Only scroll once on initial load if directly visiting a sub-path URL like /programs
+    // Position directly at the requested section on load without flashing or scrolling through home
     if (!hasScrolledRef.current && initialSection && initialSection !== "home") {
       hasScrolledRef.current = true;
+      scrollToSection(initialSection, false);
       const timer = setTimeout(() => {
-        scrollToSection(initialSection, true);
-      }, 150);
+        scrollToSection(initialSection, false);
+      }, 50);
       return () => {
         clearTimeout(timer);
         cleanup();

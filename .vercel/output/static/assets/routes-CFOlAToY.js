@@ -1,0 +1,1 @@
+import{t as e}from"./vendor-react-B9RXrzN6.js";import{t}from"./landing-page-CrrymM_0.js";var n=e();function r(){return(0,n.jsx)(t,{initialSection:`home`})}export{r as component};

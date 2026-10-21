@@ -53,8 +53,8 @@ export function Trainers() {
                     {[Instagram, Twitter, Youtube].map((Icon, n) => (
                       <a
                         key={n}
-                        href="/trainers"
-                        onClick={(e) => handleNavClick("/trainers", e)}
+                        href="#trainers"
+                        onClick={(e) => handleNavClick("#trainers", e)}
                         aria-label={`${t.name} social profile`}
                         className="rounded-full glass p-2.5 hover:text-primary"
                       >

@@ -51,8 +51,8 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-8 lg:grid-cols-4 lg:px-8 lg:py-10">
         <div>
           <a
-            href="/home"
-            onClick={(e) => handleNavClick("/home", e)}
+            href="#home"
+            onClick={(e) => handleNavClick("#home", e)}
             className="flex items-center gap-2.5 display text-2xl tracking-widest"
           >
             <img
@@ -105,8 +105,8 @@ export function Footer() {
             {quick.map((l) => (
               <li key={l}>
                 <a
-                  href={`/${l.toLowerCase()}`}
-                  onClick={(e) => handleNavClick(`/${l.toLowerCase()}`, e)}
+                  href={`#${l.toLowerCase()}`}
+                  onClick={(e) => handleNavClick(`#${l.toLowerCase()}`, e)}
                   className="text-sm text-muted-foreground transition hover:text-primary"
                 >
                   {l}
@@ -122,8 +122,8 @@ export function Footer() {
             {programs.map((p) => (
               <li key={p}>
                 <a
-                  href="/programs"
-                  onClick={(e) => handleNavClick("/programs", e)}
+                  href="#programs"
+                  onClick={(e) => handleNavClick("#programs", e)}
                   className="text-sm text-muted-foreground transition hover:text-primary"
                 >
                   {p}

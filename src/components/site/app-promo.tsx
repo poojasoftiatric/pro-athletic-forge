@@ -44,15 +44,15 @@ export function AppPromo() {
           </ul>
           <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href="/contact"
-              onClick={(e) => handleNavClick("/contact", e)}
+              href="#contact"
+              onClick={(e) => handleNavClick("#contact", e)}
               className="rounded-full glass px-7 py-3.5 text-sm font-bold tracking-wide uppercase transition hover:border-primary hover:-translate-y-0.5"
             >
               App Store
             </a>
             <a
-              href="/contact"
-              onClick={(e) => handleNavClick("/contact", e)}
+              href="#contact"
+              onClick={(e) => handleNavClick("#contact", e)}
               className="rounded-full glass px-7 py-3.5 text-sm font-bold tracking-wide uppercase transition hover:border-primary hover:-translate-y-0.5"
             >
               Google Play

@@ -79,8 +79,8 @@ export function Membership() {
                   ))}
                 </ul>
                 <a
-                  href="/contact"
-                  onClick={(e) => handleNavClick("/contact", e)}
+                  href="#contact"
+                  onClick={(e) => handleNavClick("#contact", e)}
                   className={`mt-8 block w-full rounded-full py-3.5 text-center text-sm font-bold tracking-wide uppercase transition-all duration-300 hover:-translate-y-0.5 ${
                     plan.highlight
                       ? "text-primary-foreground hover:glow-red"

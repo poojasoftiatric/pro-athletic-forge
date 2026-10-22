@@ -68,7 +68,8 @@ export function Footer() {
             </span>
           </a>
           <p className="mt-4 text-sm text-muted-foreground">
-            Punjab's premier athletic gym and performance center at Hollywood Plaza, SCO 9-10, VIP Road, Zirakpur. Open 7 days a week, 6 AM – 11 PM.
+            Punjab's premier athletic gym and performance center at Hollywood Plaza, SCO 9-10, VIP
+            Road, Zirakpur. Open 7 days a week, 6 AM – 11 PM.
           </p>
           <div className="mt-5 flex gap-3">
             {[

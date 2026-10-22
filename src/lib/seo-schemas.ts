@@ -208,7 +208,8 @@ export const membershipSchema = {
       name: "Starter Membership",
       price: "5000",
       priceCurrency: "INR",
-      description: "3 Months access with full floor access, free onboarding, locker and shower facilities.",
+      description:
+        "3 Months access with full floor access, free onboarding, locker and shower facilities.",
       availability: "https://schema.org/InStock",
       seller: { "@id": `${SITE_URL}/#gym` },
     },
@@ -217,7 +218,8 @@ export const membershipSchema = {
       name: "Premium Membership",
       price: "7500",
       priceCurrency: "INR",
-      description: "6 Months access including personal trainer consultation, group classes, and nutrition blueprint.",
+      description:
+        "6 Months access including personal trainer consultation, group classes, and nutrition blueprint.",
       availability: "https://schema.org/InStock",
       seller: { "@id": `${SITE_URL}/#gym` },
     },
@@ -226,7 +228,8 @@ export const membershipSchema = {
       name: "Elite Membership",
       price: "10000",
       priceCurrency: "INR",
-      description: "12 Months VIP access including 1-on-1 personal coaching, priority booking, and guest passes.",
+      description:
+        "12 Months VIP access including 1-on-1 personal coaching, priority booking, and guest passes.",
       availability: "https://schema.org/InStock",
       seller: { "@id": `${SITE_URL}/#gym` },
     },

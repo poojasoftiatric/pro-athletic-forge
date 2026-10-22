@@ -38,7 +38,7 @@ export const Route = createFileRoute("/contact")({
         content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
       },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/contact` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(contactSchema) },
       { type: "application/ld+json", children: JSON.stringify(breadcrumb) },

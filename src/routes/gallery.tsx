@@ -47,7 +47,7 @@ export const Route = createFileRoute("/gallery")({
         content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
       },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/gallery` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(gallerySchema) },
       { type: "application/ld+json", children: JSON.stringify(breadcrumb) },

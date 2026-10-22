@@ -55,7 +55,8 @@ export function Hero() {
 
         <Reveal direction="up" delay={200}>
           <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
-            Train at Zirakpur's premier fitness center on VIP Road. 7+ certified coaches, 18-hour facility access, Olympic strength equipment, and a community built for champions.
+            Train at Zirakpur's premier fitness center on VIP Road. 7+ certified coaches, 18-hour
+            facility access, Olympic strength equipment, and a community built for champions.
           </p>
         </Reveal>
 

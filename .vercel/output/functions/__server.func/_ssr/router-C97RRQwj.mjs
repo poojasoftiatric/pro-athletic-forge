@@ -1,5 +1,5 @@
 import { K as require_jsx_runtime, _ as createFileRoute, b as useRouter, d as Scripts, f as HeadContent, g as lazyRouteComponent, h as Outlet, m as createRouter, v as createRootRoute, y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DqeiK31V.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-C97RRQwj.js
 var import_jsx_runtime = require_jsx_runtime();
 var styles_default = "/assets/styles-C9dSchvP.css";
 function NotFoundComponent() {
@@ -640,7 +640,7 @@ var Route$7 = createFileRoute("/about")({
 		],
 		links: [{
 			rel: "canonical",
-			href: `${SITE_URL}/about`
+			href: `${SITE_URL}/`
 		}],
 		scripts: [{
 			type: "application/ld+json",
@@ -729,7 +729,7 @@ var Route$6 = createFileRoute("/contact")({
 		],
 		links: [{
 			rel: "canonical",
-			href: `${SITE_URL}/contact`
+			href: `${SITE_URL}/`
 		}],
 		scripts: [{
 			type: "application/ld+json",
@@ -825,7 +825,7 @@ var Route$5 = createFileRoute("/gallery")({
 		],
 		links: [{
 			rel: "canonical",
-			href: `${SITE_URL}/gallery`
+			href: `${SITE_URL}/`
 		}],
 		scripts: [{
 			type: "application/ld+json",
@@ -993,7 +993,7 @@ var Route$3 = createFileRoute("/membership")({
 		],
 		links: [{
 			rel: "canonical",
-			href: `${SITE_URL}/membership`
+			href: `${SITE_URL}/`
 		}],
 		scripts: [{
 			type: "application/ld+json",
@@ -1082,7 +1082,7 @@ var Route$2 = createFileRoute("/programs")({
 		],
 		links: [{
 			rel: "canonical",
-			href: `${SITE_URL}/programs`
+			href: `${SITE_URL}/`
 		}],
 		scripts: [{
 			type: "application/ld+json",
@@ -1178,7 +1178,7 @@ var Route$1 = createFileRoute("/testimonials")({
 		],
 		links: [{
 			rel: "canonical",
-			href: `${SITE_URL}/testimonials`
+			href: `${SITE_URL}/`
 		}],
 		scripts: [{
 			type: "application/ld+json",
@@ -1267,7 +1267,7 @@ var Route = createFileRoute("/trainers")({
 		],
 		links: [{
 			rel: "canonical",
-			href: `${SITE_URL}/trainers`
+			href: `${SITE_URL}/`
 		}],
 		scripts: [{
 			type: "application/ld+json",

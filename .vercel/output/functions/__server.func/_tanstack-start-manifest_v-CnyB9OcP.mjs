@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-CtJCcet2.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-CnyB9OcP.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "C:/Users/User/Desktop/Pro Athletic/pro-athletic-forge/src/routes/__root.tsx",
@@ -14,7 +14,7 @@ var tsrStartManifest = () => ({ routes: {
 			"/trainers"
 		],
 		preloads: [
-			"/assets/index-Dc9kn8Ex.js",
+			"/assets/index-B2bfMBxP.js",
 			"/assets/rolldown-runtime-CbXtAM7H.js",
 			"/assets/vendor-react-B9RXrzN6.js",
 			"/assets/vendor-router-core-BHILUWGm.js",
@@ -23,7 +23,7 @@ var tsrStartManifest = () => ({ routes: {
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-Dc9kn8Ex.js"
+			src: "/assets/index-B2bfMBxP.js"
 		} }]
 	},
 	"/": {

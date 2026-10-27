@@ -1,1 +1,0 @@
-import{t as e}from"./index-BfsGci1a.js";import{t}from"./landing-page-BOCxqzgA.js";var n=e(),r=()=>(0,n.jsx)(t,{initialSection:`programs`});export{r as component};

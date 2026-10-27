@@ -1,1 +1,0 @@
-import{t as e}from"./index-DMDNvqHM.js";import{t}from"./landing-page-DZX-N64N.js";var n=e(),r=()=>(0,n.jsx)(t,{initialSection:`about`});export{r as component};

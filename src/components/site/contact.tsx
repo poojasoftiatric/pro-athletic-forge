@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, type FormEvent } from "react";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { Reveal } from "./reveal";
@@ -56,7 +58,10 @@ export function Contact() {
     "mt-2 w-full rounded-2xl border border-glass-border bg-secondary/60 px-5 py-3.5 text-sm outline-none transition focus:border-primary";
   const labelCls = "text-xs font-semibold tracking-widest uppercase text-muted-foreground";
 
-  const accessKey = import.meta.env["VITE_WEB3FORMS_ACCESS_KEY"];
+  const accessKey =
+    process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ||
+    process.env.VITE_WEB3FORMS_ACCESS_KEY ||
+    "91cbcb58-076c-4178-aa1a-dfc835738b99";
 
   return (
     <section id="contact" className="relative py-8 lg:py-10">

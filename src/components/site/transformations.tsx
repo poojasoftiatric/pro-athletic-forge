@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useRef } from "react";
 import before1 from "@/assets/before-1.webp";
 import after1 from "@/assets/after-1.webp";
@@ -44,7 +46,7 @@ export function Transformations() {
   };
 
   return (
-    <section className="relative py-8 lg:py-10">
+    <section id="transformations" className="relative py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Transformations"
@@ -66,8 +68,8 @@ export function Transformations() {
                 }`}
               >
                 <img
-                  src={after1}
-                  alt="Member after their Pro Athletic transformation"
+                  src={after1.src}
+                  alt="Pro Athletic Gym member body transformation after personal training and weight loss in Zirakpur"
                   loading="lazy"
                   decoding="async"
                   draggable={false}
@@ -80,8 +82,8 @@ export function Transformations() {
                   style={{ width: `${pos}%` }}
                 >
                   <img
-                    src={before1}
-                    alt="Member before their Pro Athletic transformation"
+                    src={before1.src}
+                    alt="Pro Athletic Gym member before starting fitness and strength training program in Zirakpur"
                     loading="lazy"
                     decoding="async"
                     draggable={false}

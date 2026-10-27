@@ -45,9 +45,9 @@ export function handleNavClick(target: string, e?: React.MouseEvent) {
   scrollToSection(sectionId, true);
 
   if (typeof window !== "undefined") {
-    const newHash = `#${sectionId}`;
-    if (window.location.hash !== newHash) {
-      window.history.replaceState(window.history.state, "", newHash);
+    const newPath = sectionId === "home" ? "/" : `/${sectionId}`;
+    if (window.location.pathname !== newPath || window.location.hash) {
+      window.history.pushState(null, "", newPath);
     }
   }
 }
@@ -55,17 +55,25 @@ export function handleNavClick(target: string, e?: React.MouseEvent) {
 export function initPopStateListener() {
   if (typeof window === "undefined") return () => {};
 
-  const handlePopState = () => {
-    const hash = window.location.hash.replace(/^#/, "");
+  const handleNavigationChange = () => {
+    // If incoming with old hash like /#membership, clean it up to /membership
+    if (window.location.hash) {
+      const hashId = window.location.hash.replace(/^#/, "");
+      const cleanPath = hashId === "home" ? "/" : `/${hashId}`;
+      window.history.replaceState(null, "", cleanPath);
+      scrollToSection(hashId, true);
+      return;
+    }
+
     const path = window.location.pathname.replace(/^\/+|\/+$/g, "");
-    const sectionId = getSectionIdFromPath(hash || path);
+    const sectionId = getSectionIdFromPath(path);
     scrollToSection(sectionId, true);
   };
 
-  window.addEventListener("popstate", handlePopState);
-  window.addEventListener("hashchange", handlePopState);
+  window.addEventListener("popstate", handleNavigationChange);
+  window.addEventListener("hashchange", handleNavigationChange);
   return () => {
-    window.removeEventListener("popstate", handlePopState);
-    window.removeEventListener("hashchange", handlePopState);
+    window.removeEventListener("popstate", handleNavigationChange);
+    window.removeEventListener("hashchange", handleNavigationChange);
   };
 }

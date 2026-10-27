@@ -28,7 +28,7 @@ const facilities = [
 
 export function Facilities() {
   return (
-    <section className="relative py-8 lg:py-10">
+    <section id="facilities" className="relative py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Facilities & Amenities"

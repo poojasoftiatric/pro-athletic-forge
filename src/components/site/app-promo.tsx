@@ -51,8 +51,8 @@ export function AppPromo() {
               App Store
             </a>
             <a
-              href="#contact"
-              onClick={(e) => handleNavClick("#contact", e)}
+              href="/contact"
+              onClick={(e) => handleNavClick("/contact", e)}
               className="rounded-full glass px-7 py-3.5 text-sm font-bold tracking-wide uppercase transition hover:border-primary hover:-translate-y-0.5"
             >
               Google Play
@@ -62,8 +62,8 @@ export function AppPromo() {
 
         <Reveal direction="right" className="flex justify-center">
           <img
-            src={phone}
-            alt="Pro Athletic mobile app shown on a smartphone"
+            src={phone.src}
+            alt="Pro Athletic fitness companion mobile app for class booking and workout tracking in Zirakpur"
             loading="lazy"
             width={800}
             height={1100}

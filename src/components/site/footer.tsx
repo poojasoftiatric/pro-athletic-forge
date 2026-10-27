@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, type FormEvent } from "react";
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 import logoPag from "@/assets/Logo_PAG.webp";
@@ -11,7 +13,10 @@ export function Footer() {
   const [resultMessage, setResultMessage] = useState("");
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const accessKey = import.meta.env["VITE_WEB3FORMS_ACCESS_KEY"];
+  const accessKey =
+    process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ||
+    process.env.VITE_WEB3FORMS_ACCESS_KEY ||
+    "91cbcb58-076c-4178-aa1a-dfc835738b99";
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -51,13 +56,13 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-8 lg:grid-cols-4 lg:px-8 lg:py-10">
         <div>
           <a
-            href="#home"
-            onClick={(e) => handleNavClick("#home", e)}
+            href="/"
+            onClick={(e) => handleNavClick("/", e)}
             className="flex items-center gap-2.5 display text-2xl tracking-widest"
           >
             <img
-              src={logoPag}
-              alt="Pro Athletic Gyms Logo"
+              src={logoPag.src}
+              alt="Pro Athletic Gyms Zirakpur logo"
               width={36}
               height={36}
               loading="lazy"
@@ -101,30 +106,33 @@ export function Footer() {
         </div>
 
         <nav aria-label="Quick links">
-          <h2 className="text-sm font-bold tracking-widest uppercase">Quick Links</h2>
+          <h3 className="text-sm font-bold tracking-widest uppercase text-foreground">Quick Links</h3>
           <ul className="mt-4 space-y-2.5">
-            {quick.map((l) => (
-              <li key={l}>
-                <a
-                  href={`#${l.toLowerCase()}`}
-                  onClick={(e) => handleNavClick(`#${l.toLowerCase()}`, e)}
-                  className="text-sm text-muted-foreground transition hover:text-primary"
-                >
-                  {l}
-                </a>
-              </li>
-            ))}
+            {quick.map((l) => {
+              const path = l.toLowerCase() === "home" ? "/" : `/${l.toLowerCase()}`;
+              return (
+                <li key={l}>
+                  <a
+                    href={path}
+                    onClick={(e) => handleNavClick(path, e)}
+                    className="text-sm text-muted-foreground transition hover:text-primary"
+                  >
+                    {l}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
         <nav aria-label="Programs">
-          <h2 className="text-sm font-bold tracking-widest uppercase">Programs</h2>
+          <h3 className="text-sm font-bold tracking-widest uppercase text-foreground">Programs</h3>
           <ul className="mt-4 space-y-2.5">
             {programs.map((p) => (
               <li key={p}>
                 <a
-                  href="#programs"
-                  onClick={(e) => handleNavClick("#programs", e)}
+                  href="/programs"
+                  onClick={(e) => handleNavClick("/programs", e)}
                   className="text-sm text-muted-foreground transition hover:text-primary"
                 >
                   {p}
@@ -135,7 +143,7 @@ export function Footer() {
         </nav>
 
         <div>
-          <h2 className="text-sm font-bold tracking-widest uppercase">Newsletter</h2>
+          <h3 className="text-sm font-bold tracking-widest uppercase text-foreground">Newsletter</h3>
           <p className="mt-4 text-sm text-muted-foreground">
             Training tips and member offers, once a month.
           </p>

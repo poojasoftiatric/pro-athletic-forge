@@ -30,8 +30,8 @@ export function Gallery() {
             <Reveal key={s.label} direction="up" delay={(i % 3) * 100}>
               <figure className="group relative overflow-hidden rounded-3xl glass break-inside-avoid">
                 <img
-                  src={s.img}
-                  alt={`${s.label} zone and equipment at Pro Athletic Gym Zirakpur`}
+                  src={typeof s.img === "string" ? s.img : s.img.src}
+                  alt={`${s.label} facility and Olympic fitness training equipment at Pro Athletic Gym on VIP Road Zirakpur`}
                   loading="lazy"
                   decoding="async"
                   width={s.w}

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, ExternalLink, Star } from "lucide-react";
 import { SectionHeading } from "./why-us";

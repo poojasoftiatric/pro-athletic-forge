@@ -40,8 +40,8 @@ export function Trainers() {
               <article className="group h-full overflow-hidden rounded-3xl glass lift">
                 <div className="relative aspect-[3/4] overflow-hidden">
                   <img
-                    src={t.img}
-                    alt={`${t.name} - ${t.spec} at Pro Athletic Gym Zirakpur (${t.exp} experience)`}
+                    src={typeof t.img === "string" ? t.img : t.img.src}
+                    alt={`${t.name} - certified personal trainer and ${t.spec} coach at Pro Athletic Gym Zirakpur (${t.exp} experience)`}
                     loading="lazy"
                     decoding="async"
                     width={600}

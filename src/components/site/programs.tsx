@@ -62,9 +62,9 @@ export function Programs() {
     <section id="programs" className="relative py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
-          eyebrow="Training Programs"
-          title="TRAIN YOUR WAY"
-          subtitle="Nine expert-coached fitness disciplines, all under one membership on VIP Road. Switch anytime."
+          eyebrow="Training Programs & Classes"
+          title="WORKOUT PROGRAMS IN ZIRAKPUR"
+          subtitle="Nine expert-coached fitness disciplines, from CrossFit and Strength Training to Yoga and Weight Loss, all under one membership on VIP Road."
         />
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:mt-10 lg:grid-cols-3">
           {programs.map((p, i) => (
@@ -72,8 +72,8 @@ export function Programs() {
               <article className="group h-full overflow-hidden rounded-3xl glass lift">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
-                    src={p.img}
-                    alt={`${p.title} session at Pro Athletic Gym Zirakpur`}
+                    src={typeof p.img === "string" ? p.img : p.img.src}
+                    alt={`${p.title} training program and fitness coaching class at Pro Athletic Gym Zirakpur`}
                     loading="lazy"
                     decoding="async"
                     width={640}

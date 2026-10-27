@@ -1,3 +1,5 @@
+"use client";
+
 import { useMemo, useState } from "react";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./why-us";
@@ -33,7 +35,7 @@ export function BmiCalculator() {
   const status = bmi ? statusFor(bmi) : null;
 
   return (
-    <section className="relative py-8 lg:py-10">
+    <section id="bmi" className="relative py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Know Your Numbers"

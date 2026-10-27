@@ -24,6 +24,16 @@ export const gymSchema = {
     postalCode: "140603",
     addressCountry: "IN",
   },
+  areaServed: [
+    { "@type": "City", name: "Zirakpur" },
+    { "@type": "AdministrativeArea", name: "VIP Road Zirakpur" },
+    { "@type": "AdministrativeArea", name: "Dhakoli" },
+    { "@type": "AdministrativeArea", name: "Baltana" },
+    { "@type": "AdministrativeArea", name: "Pabhat" },
+    { "@type": "AdministrativeArea", name: "Peer Muchalla" },
+    { "@type": "City", name: "Panchkula" },
+    { "@type": "City", name: "Mohali" },
+  ],
   geo: {
     "@type": "GeoCoordinates",
     latitude: 30.6435,

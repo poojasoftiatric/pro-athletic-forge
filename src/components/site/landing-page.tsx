@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef } from "react";
 import { Navbar } from "@/components/site/navbar";
 import { Hero } from "@/components/site/hero";

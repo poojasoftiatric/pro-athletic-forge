@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { Plus } from "lucide-react";
 import { Reveal } from "./reveal";
@@ -61,7 +63,7 @@ export function Faq() {
                       onClick={() => setOpen(isOpen ? null : i)}
                       className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-semibold tracking-wide transition-colors hover:text-primary"
                     >
-                      <span>{faq.q}</span>
+                      <h3 className="text-base font-semibold tracking-wide">{faq.q}</h3>
                       <span
                         className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
                           isOpen
